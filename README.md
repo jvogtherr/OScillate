@@ -1,11 +1,14 @@
 OScillate
 =========
+Vorlesung Regelbasierte Modelle WS 2013/14
+Timmy Schüller, Jan Philipp Vogtherr
 
 ##Leitfrage 
 Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Faktoren haben darauf Einfluss?
 
-##Agent: Fahrgast
+##Modellierung
 
+###Agent: Fahrgast
     Fahrgast -> Student | Sonstige(Hintergrundlast)
 
     Student[heterogene Eigenschaften](
