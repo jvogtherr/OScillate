@@ -1,9 +1,10 @@
 OScillate
 =========
 
-#Leitfrage: Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Faktoren haben darauf Einfluss?
+##Leitfrage 
+Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Faktoren haben darauf Einfluss?
 
-#Agent: Fahrgast
+##Agent: Fahrgast
 
     Fahrgast -> Student | Sonstige(Hintergrundlast)
 
@@ -25,7 +26,7 @@ OScillate
     )
 
 
-#Notizen
+##Notizen
 21 & 11 kommt, 
 queue.head entscheidet sich für einen
 wenn 21 oder 11 voll, suche anderen aus
