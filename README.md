@@ -30,7 +30,13 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 
 
 ##Notizen
+
+####Schlange
 21 & 11 kommt, 
 queue.head entscheidet sich für einen
 wenn 21 oder 11 voll, suche anderen aus
 evtl: biete möglichkeit stehenzubleiben/hinten anstellen(mit 'ttl') falls erstie & 11 oder bus zu voll (Sozialfaktor vs. Eile)
+
+####Faulheits-Faktor und Eile-Faktor
+Faulheit und Eile zusammenfassen? => Beispiel: 0 <= Motivation <= 1, 0 = faul, 0.5 = egal 1 = eilig
+verpasseter Bus erhöht Motivationsfaktor
