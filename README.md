@@ -1,7 +1,7 @@
 OScillate
 =========
 ####Vorlesung Regelbasierte Modelle WS 2013/14
-Timmy Schüller, Jan Philipp Vogtherr
+Übungsprojekt von Timmy Schüller und Jan Philipp Vogtherr
 
 ##Leitfrage 
 Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Faktoren haben darauf Einfluss?
