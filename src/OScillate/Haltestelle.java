@@ -3,6 +3,7 @@ package OScillate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.*;
 
 import repast.simphony.engine.schedule.ScheduledMethod;
 
@@ -75,12 +76,14 @@ public class Haltestelle {
 	//lasse Busse weiterfahren
 	@ScheduledMethod(start=1.2, interval=1.0)
 	public void uptadeBusse(){
-		for(Bus b : fahrendeBusse){
+		Iterator<Bus> i = fahrendeBusse.iterator(); 
+		while(i.hasNext()){
+			Bus b = i.next();
 			//wenn Bus angekommen
 			if(b.fahrzeit==0){
 				b.aussteigen();
 				//erst hier darf Garbage Collector zuschlagen
-				fahrendeBusse.remove(b);
+				i.remove();
 				continue;
 			}
 			b.fahrzeit--;
