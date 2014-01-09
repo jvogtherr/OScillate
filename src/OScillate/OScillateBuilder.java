@@ -23,8 +23,8 @@ public class OScillateBuilder implements ContextBuilder<Object>{
 			studenten.add(new Student());
 		}
 		
-		Haltestelle neumarkt = new Haltestelle();
-		Haltestelle uni = new Haltestelle();
+		//Haltestelle neumarkt = new Haltestelle();
+		//Haltestelle uni = new Haltestelle();
 		
 		BusGenerator bus_generator = new BusGenerator();
 		

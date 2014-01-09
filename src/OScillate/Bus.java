@@ -3,14 +3,22 @@ package OScillate;
 import java.util.LinkedList;
 import java.util.List;
 
+import repast.simphony.engine.schedule.ScheduledMethod;
+
 public class Bus {
 
+	public static final boolean elf = false;
+	public static final boolean einundzwanzig = true;
+	
 	private final int sitzplaetze;
 	private List<Person> fahrgaeste = new LinkedList<Person>();
 	//wenn alle Busse losfahren==true, dann gehe weiter in der Zeit
-	private boolean losfahren;
+	public boolean losfahren;
+	public final boolean bid;
+	public int fahrzeit;
 	
-	Bus(double fuelle, int sitzplaetze){
+	Bus(boolean bid, double fuelle, int sitzplaetze){
+		this.bid = bid;
 		init(fuelle);
 		this.sitzplaetze = sitzplaetze;
 		this.losfahren=false;
@@ -37,5 +45,13 @@ public class Bus {
 				((Student)p).nextZustand();
 			}
 		}
+	}
+	
+	//darf jemand einsteigen?
+	public boolean blockiert(){
+		if(this.fahrgaeste.size()>=this.sitzplaetze)
+			return true;
+		else
+			return !losfahren;
 	}
 }

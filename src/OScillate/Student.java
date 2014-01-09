@@ -1,5 +1,6 @@
 package OScillate;
 
+import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.random.RandomHelper;
 
 public class Student extends Person{
@@ -8,8 +9,7 @@ public class Student extends Person{
 	public static final int wartet = 1;
 	public static final int faehrt_bus = 2;
 	public static final int studiert = 3;
-	public static final boolean elf = false;
-	public static final boolean einundzwanzig = true;
+
 	
 	private int ziel;
 	private int zustand;
@@ -20,7 +20,7 @@ public class Student extends Person{
 	
 	
 	Student(){
-		lieblingsbus = this.einundzwanzig;
+		lieblingsbus = Bus.einundzwanzig;
 		zustand = schlaeft;
 		ziel = studiert;
 		//TODO: Zeitauswahl besser eingrenzen
@@ -29,15 +29,22 @@ public class Student extends Person{
 		zurueckgestellt = false;
 	}
 	
+	@ScheduledMethod(start=0.9, interval=1)
 	public void entscheide(){
 		//TODO: aktuelle Zeit wird benötigt!
 		//evtl. bekommt man von repast den tick count, dann ginge
 		//Tick % 60, bzw. mehr als 60, wenn man zwischen den tagen
 		//ein wenig puffer möchte
+		//dann:
+		//wenn zeit >= endzeit && zustand==studiert: An Uni anstellen && Zustand wechseln
+		//ansonsten wenn zeit >= startzeit && zustand==schlaeft: An Neumarkt anstellen && Zustand wechseln
+		//ansonsten do nothing
+		
+		//außerdem: Student braucht referenzen auf Haltestellen oder BusGenerator
 		if(RandomHelper.nextDoubleFromTo(0, 1) >= 0.5){
-			this.lieblingsbus = this.elf;
+			this.lieblingsbus = Bus.elf;
 		} else{
-			this.lieblingsbus = this.einundzwanzig;
+			this.lieblingsbus = Bus.einundzwanzig;
 		}
 		
 	}
@@ -53,10 +60,18 @@ public class Student extends Person{
 	}
 
 	public boolean getZurueckgestellt() {
-		return this.zurueckgestellt;
+		return zurueckgestellt;
+	}
+	
+	public void setZurueckgestellt(boolean s){
+		zurueckgestellt = s;
 	}
 
 	public boolean getLieblingsbus() {
-		return this.lieblingsbus;
+		return lieblingsbus;
+	}
+	
+	public void setZustand(int s){
+		this.zustand = s;
 	}
 }
