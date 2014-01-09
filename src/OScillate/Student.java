@@ -3,33 +3,41 @@ package OScillate;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.random.RandomHelper;
 
-public class Student extends Person{
-
-	public static final int schlaeft = 0;
-	public static final int wartet = 1;
-	public static final int faehrt_bus = 2;
-	public static final int studiert = 3;
-
+public class Student extends Person {
 	
+	class Zustand {
+		public static final int ZUHAUSE = 0;
+		public static final int WARTET = 1;
+		public static final int FAEHRT_BUS = 2;
+		public static final int STUDIERT = 3;
+	}		
+		
 	private int ziel;
-	private int zustand;
-	//Gemessen in 10min Zeitschritten (vorläufig) dh 8:00 == 0 und 18:00 == 60
-	private int startzeit, endzeit;
+	private int zustand;	
+	private int startzeit;
+	private int endzeit;
+	
 	private boolean zurueckgestellt;
-	private boolean lieblingsbus;
 	
+	private int lieblingsbus;
 	
-	Student(){
-		lieblingsbus = Bus.einundzwanzig;
-		zustand = schlaeft;
-		ziel = studiert;
+	private Haltestelle neumarkt;
+	private Haltestelle uni;
+	
+		
+	public Student(Haltestelle neumarkt, Haltestelle uni) {
+		lieblingsbus = Bus.Linie.EINUNDZWANZIG;
+		zustand = Zustand.ZUHAUSE;
+		ziel = Zustand.STUDIERT;
 		//TODO: Zeitauswahl besser eingrenzen
-		startzeit = RandomHelper.nextIntFromTo(0, 56);
-		endzeit = RandomHelper.nextIntFromTo(startzeit, 58);
+		startzeit = RandomHelper.nextIntFromTo(0, 112);
+		endzeit = RandomHelper.nextIntFromTo(startzeit, 116);
 		zurueckgestellt = false;
+		this.neumarkt = neumarkt;
+		this.uni = uni;
 	}
 	
-	@ScheduledMethod(start=0.9, interval=1)
+	@ScheduledMethod(start=0.9, interval=1.0)
 	public void entscheide(){
 		//TODO: aktuelle Zeit wird benötigt!
 		//evtl. bekommt man von repast den tick count, dann ginge
@@ -42,21 +50,26 @@ public class Student extends Person{
 		
 		//außerdem: Student braucht referenzen auf Haltestellen oder BusGenerator
 		if(RandomHelper.nextDoubleFromTo(0, 1) >= 0.5){
-			this.lieblingsbus = Bus.elf;
+			this.lieblingsbus = Bus.Linie.ELF;
 		} else{
-			this.lieblingsbus = Bus.einundzwanzig;
+			this.lieblingsbus = Bus.Linie.EINUNDZWANZIG;
+		}
+		
+		if (zustand == Zustand.ZUHAUSE) {
+			neumarkt.addStudent(this);
+		} else if (zustand == Zustand.STUDIERT) {
+			uni.addStudent(this);
 		}
 		
 	}
 	
 	public void nextZustand(){
-		if(this.zustand != this.faehrt_bus){
-			//Exception? Fehler? nicht zulässig!
-			return;
-		}
-		this.zustand = this.ziel;
-		//wechsle Ziel zwischen studieren/schlafen
-		this.ziel = ((this.ziel == this.studiert) ? this.schlaeft : this.studiert);
+		if (this.zustand == Zustand.FAEHRT_BUS){
+			this.zustand = this.ziel;
+			this.ziel = (this.ziel == Zustand.STUDIERT ? Zustand.ZUHAUSE : Zustand.STUDIERT);
+		} else {
+			// TODO: Exception?
+		}		
 	}
 
 	public boolean getZurueckgestellt() {
@@ -67,7 +80,7 @@ public class Student extends Person{
 		zurueckgestellt = s;
 	}
 
-	public boolean getLieblingsbus() {
+	public int getLieblingsbus() {
 		return lieblingsbus;
 	}
 	

@@ -14,7 +14,7 @@ public class Haltestelle {
 	private Bus einundzwanzig;
 	
 	
-	Haltestelle(){
+	public Haltestelle(){
 		elf = null;
 		einundzwanzig = null;
 	}
@@ -23,13 +23,24 @@ public class Haltestelle {
 		queue.add(s);
 	}
 	
+	@ScheduledMethod(start=1.0, interval=2.0)
+	public void generateElf() {
+		this.elf = new Bus(Bus.Linie.ELF, 0, 100);
+	}
+	
+	@ScheduledMethod(start=1.0, interval=3.0)
+	public void generateEinundzwanzig() {
+		this.einundzwanzig = new Bus(Bus.Linie.EINUNDZWANZIG, 0, 100);
+	}
+	
+	@ScheduledMethod(start=1.1, interval=1.0)
 	public void einsteigen(){
 		while(!queue.isEmpty() || !(queue.peek().getZurueckgestellt())){
 			Student s = queue.poll();
-			if(s.getLieblingsbus() == Bus.elf){
+			if(s.getLieblingsbus() == Bus.Linie.ELF){
 				if(this.elf != null && !this.elf.blockiert()){
 					this.elf.addStudent(s);
-					s.setZustand(Student.faehrt_bus);
+					s.setZustand(Student.Zustand.FAEHRT_BUS);
 				} else {
 					s.setZurueckgestellt(true);
 					queue.add(s);
@@ -38,7 +49,7 @@ public class Haltestelle {
 				//redundant, geht evtl besser
 				if( this.einundzwanzig != null && !this.einundzwanzig.blockiert()){
 					this.einundzwanzig.addStudent(s);
-					s.setZustand(Student.faehrt_bus);
+					s.setZustand(Student.Zustand.FAEHRT_BUS);
 				} else {
 					s.setZurueckgestellt(true);
 					queue.add(s);
@@ -59,18 +70,10 @@ public class Haltestelle {
 			fahrendeBusse.add(this.einundzwanzig);
 			this.einundzwanzig = null;
 		}
-	}
-	
-	public void addBus(Bus b){
-		if(b.bid == Bus.elf){
-			this.elf = b;
-		} else {
-			this.einundzwanzig = b;
-		}
-	}
+	}	
 	
 	//lasse Busse weiterfahren
-	@ScheduledMethod(start=1.1, interval=1)
+	@ScheduledMethod(start=1.2, interval=1.0)
 	public void uptadeBusse(){
 		for(Bus b : fahrendeBusse){
 			//wenn Bus angekommen

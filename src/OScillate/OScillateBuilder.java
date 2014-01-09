@@ -1,8 +1,5 @@
 package OScillate;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import repast.simphony.context.Context;
 import repast.simphony.dataLoader.ContextBuilder;
 import repast.simphony.engine.environment.RunEnvironment;
@@ -12,24 +9,21 @@ public class OScillateBuilder implements ContextBuilder<Object>{
 
 	@Override
 	public Context build(Context<Object> context) {
-
-		//parameter fun
 		Parameters p = RunEnvironment.getInstance().getParameters();
-		int num_studenten = (Integer)p.getValue("num_Studenten");
-		List<Student> studenten = new LinkedList<Student>();
+		int num_studenten = (Integer)p.getValue("num_Studenten");		
+
+		// Haltestellen erstellen
+		Haltestelle neumarkt = new Haltestelle();
+		Haltestelle uni = new Haltestelle();		
+		context.add(neumarkt);
+		context.add(uni);		
 		
-		//Sachen erstellen
-		for(int i=0; i<num_studenten; i++){
-			studenten.add(new Student());
-		}
+		// Studenten erstellen		
+		for (int i = 0; i < num_studenten; i++) {
+			context.add(new Student(neumarkt, uni));
+		}				
 		
-		//Haltestelle neumarkt = new Haltestelle();
-		//Haltestelle uni = new Haltestelle();
-		
-		BusGenerator bus_generator = new BusGenerator();
-		
-		return null;
-	}
-	
+		return context;
+	}	
 	
 }
