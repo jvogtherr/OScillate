@@ -35,7 +35,7 @@ public class Haltestelle {
 	
 	@ScheduledMethod(start=1.1, interval=1.0)
 	public void einsteigen(){
-		while(!queue.isEmpty() || !(queue.peek().getZurueckgestellt())){
+		while(!queue.isEmpty() && !(queue.peek().getZurueckgestellt())){
 			Student s = queue.poll();
 			if(s.getLieblingsbus() == Bus.Linie.ELF){
 				if(this.elf != null && !this.elf.blockiert()){

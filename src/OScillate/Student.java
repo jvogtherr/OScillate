@@ -22,8 +22,7 @@ public class Student extends Person {
 	private int lieblingsbus;
 	
 	private Haltestelle neumarkt;
-	private Haltestelle uni;
-	
+	private Haltestelle uni;	
 		
 	public Student(Haltestelle neumarkt, Haltestelle uni) {
 		lieblingsbus = Bus.Linie.EINUNDZWANZIG;
