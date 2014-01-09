@@ -1,5 +1,6 @@
 package OScillate;
 
+import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.random.RandomHelper;
 
@@ -38,28 +39,36 @@ public class Student extends Person {
 	
 	@ScheduledMethod(start=0.9, interval=1.0)
 	public void entscheide(){
-		//TODO: aktuelle Zeit wird benötigt!
-		//evtl. bekommt man von repast den tick count, dann ginge
-		//Tick % 60, bzw. mehr als 60, wenn man zwischen den tagen
-		//ein wenig puffer möchte
-		//dann:
-		//wenn zeit >= endzeit && zustand==studiert: An Uni anstellen && Zustand wechseln
-		//ansonsten wenn zeit >= startzeit && zustand==schlaeft: An Neumarkt anstellen && Zustand wechseln
-		//ansonsten do nothing
+		double tickcount = RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		
-		//außerdem: Student braucht referenzen auf Haltestellen oder BusGenerator
-		if(RandomHelper.nextDoubleFromTo(0, 1) >= 0.5){
-			this.lieblingsbus = Bus.Linie.ELF;
-		} else{
-			this.lieblingsbus = Bus.Linie.EINUNDZWANZIG;
+		//TODO: prüfen ob modulo auf double zu problemen führt
+		if(zustand == Zustand.ZUHAUSE){
+			if(startzeit>=(tickcount%120)){
+				neumarkt.addStudent(this);
+				zustand = Zustand.WARTET;
+			}
 		}
 		
-		if (zustand == Zustand.ZUHAUSE) {
-			neumarkt.addStudent(this);
-		} else if (zustand == Zustand.STUDIERT) {
-			uni.addStudent(this);
+		if(zustand == Zustand.STUDIERT){
+			if(endzeit>=(tickcount%120)){
+				uni.addStudent(this);
+				zustand = Zustand.WARTET;
+			}
 		}
 		
+		if(zustand == Zustand.WARTET){
+			if(RandomHelper.nextDoubleFromTo(0, 1) >= 0.5){
+				this.lieblingsbus = Bus.Linie.ELF;
+			} else{
+				this.lieblingsbus = Bus.Linie.EINUNDZWANZIG;
+			}
+		
+			if (zustand == Zustand.ZUHAUSE) {
+				neumarkt.addStudent(this);
+			} else if (zustand == Zustand.STUDIERT) {
+				uni.addStudent(this);
+			}
+		}
 	}
 	
 	public void nextZustand(){
@@ -85,5 +94,17 @@ public class Student extends Person {
 	
 	public void setZustand(int s){
 		this.zustand = s;
+	}
+	
+	//für grafiken
+	//entsprechende Datasets sind angelegt,
+	//können aber aus irgendeinem grund nicht für ein
+	//histogramchart verwendet werden...
+	//TODO: fix.
+	public int getPointForElf(){
+		return (this.lieblingsbus == Bus.Linie.ELF) ? 1 : 0;
+	}
+	public int getPointForEinundzwanzig(){
+		return (this.lieblingsbus == Bus.Linie.EINUNDZWANZIG) ? 1 : 0;
 	}
 }
