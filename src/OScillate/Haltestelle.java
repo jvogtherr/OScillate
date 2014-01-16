@@ -27,11 +27,13 @@ public class Haltestelle {
 	@ScheduledMethod(start=1.0, interval=2.0)
 	public void generateElf() {
 		this.elf = new Bus(Bus.Linie.ELF, 0, 100);
+		System.out.println("11 GENERIERT");
 	}
 	
 	@ScheduledMethod(start=1.0, interval=3.0)
 	public void generateEinundzwanzig() {
 		this.einundzwanzig = new Bus(Bus.Linie.EINUNDZWANZIG, 0, 100);
+		System.out.println("21 GENERIERT");
 	}
 	
 	@ScheduledMethod(start=1.1, interval=1.0)
@@ -42,18 +44,22 @@ public class Haltestelle {
 				if(this.elf != null && !this.elf.blockiert()){
 					this.elf.addStudent(s);
 					s.setZustand(Student.Zustand.FAEHRT_BUS);
+					System.out.println("STUDENT FÄHRT BUS");
 				} else {
 					s.setZurueckgestellt(true);
 					queue.add(s);
+					System.out.println("STUDENT WIRD ZURUECKGESTELLT");
 				}
-			} else{
+			} else{				
 				//redundant, geht evtl besser
 				if( this.einundzwanzig != null && !this.einundzwanzig.blockiert()){
 					this.einundzwanzig.addStudent(s);
 					s.setZustand(Student.Zustand.FAEHRT_BUS);
+					System.out.println("STUDENT FÄHRT BUS");
 				} else {
 					s.setZurueckgestellt(true);
 					queue.add(s);
+					System.out.println("STUDENT WIRD ZURUECKGESTELLT");
 				}
 			}
 		}
@@ -61,13 +67,13 @@ public class Haltestelle {
 		//=>Busse fahren weg
 		if(this.elf != null){
 			//behalte referenz, damit Bus nicht garbageCollected wird
-			this.elf.fahrzeit=1;
+			this.elf.fahrzeit=2;
 			fahrendeBusse.add(this.elf);
 			this.elf = null;
 		}
 		//gleiche Redundanzquelle wie oben
 		if(this.einundzwanzig != null){
-			this.einundzwanzig.fahrzeit=2;
+			this.einundzwanzig.fahrzeit=3;
 			fahrendeBusse.add(this.einundzwanzig);
 			this.einundzwanzig = null;
 		}

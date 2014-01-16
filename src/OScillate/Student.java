@@ -41,11 +41,15 @@ public class Student extends Person {
 	public void entscheide(){
 		double tickcount = RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		
+		
+		
 		//TODO: prüfen ob modulo auf double zu problemen führt
 		if(zustand == Zustand.ZUHAUSE){
 			if(startzeit>=(tickcount%120)){
 				neumarkt.addStudent(this);
 				zustand = Zustand.WARTET;
+				
+				this.sucheBusAus();
 			}
 		}
 		
@@ -53,21 +57,24 @@ public class Student extends Person {
 			if(endzeit>=(tickcount%120)){
 				uni.addStudent(this);
 				zustand = Zustand.WARTET;
+				
+				this.sucheBusAus();
 			}
 		}
 		
-		if(zustand == Zustand.WARTET){
-			if(RandomHelper.nextDoubleFromTo(0, 1) >= 0.5){
-				this.lieblingsbus = Bus.Linie.ELF;
-			} else{
-				this.lieblingsbus = Bus.Linie.EINUNDZWANZIG;
-			}
 		
-			if (zustand == Zustand.ZUHAUSE) {
-				neumarkt.addStudent(this);
-			} else if (zustand == Zustand.STUDIERT) {
-				uni.addStudent(this);
-			}
+	}
+	
+	@ScheduledMethod(start=1.3, interval=1.0)
+	public void resetZurueckgestellt() {
+		this.zurueckgestellt = false;
+	}
+	
+	public void sucheBusAus() {
+		if(RandomHelper.nextDoubleFromTo(0, 1) >= 0.5){
+			this.lieblingsbus = Bus.Linie.ELF;
+		} else{
+			this.lieblingsbus = Bus.Linie.EINUNDZWANZIG;
 		}
 	}
 	
@@ -93,7 +100,7 @@ public class Student extends Person {
 	}
 	
 	public int getZustand() {
-		System.out.println("Zustand: "+this.zustand);
+		//System.out.println("Zustand: "+this.zustand);
 		return zustand;
 	}
 	

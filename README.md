@@ -31,6 +31,13 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 
 ##Notizen
 
+###Diagramme
+* Wie viele Studenten sind in welchem Zustand? (x: Zustände, y: Anzahl Studenten)
+* Bus-Beliebtheit (x: Bus-Linie, y: Anzahl Studenten)
+
+* Zustände über Zeit (x: Zeit, y: Anzahl der Studenten, pro Zustand ein Graph)
+* Bus-Beliebtheit über Zeit (x: Zeit, y: Anzahl der Studenten, pro Bus-Linie ein Graph)
+
 ####Schlange
 21 & 11 kommt, 
 queue.head entscheidet sich für einen

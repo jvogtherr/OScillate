@@ -34,6 +34,7 @@ public class Bus {
 	}
 	
 	public boolean addStudent(Student s){
+		System.out.println("STUDENT IM BUS");
 		if(fahrgaeste.size() >= sitzplaetze){
 			fahrgaeste.add(s);
 			return true;
@@ -54,7 +55,7 @@ public class Bus {
 		if(this.fahrgaeste.size()>=this.sitzplaetze)
 			return true;
 		else
-			return !losfahren;
+			return false;
 	}
 	
 }
