@@ -83,7 +83,14 @@ public class Student extends Person {
 		return lieblingsbus;
 	}
 	
+	public int getZustand() {
+		System.out.println("Zustand: "+this.zustand);
+		return zustand;
+	}
+	
 	public void setZustand(int s){
 		this.zustand = s;
 	}
+	
+	
 }
