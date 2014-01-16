@@ -101,7 +101,6 @@ public class Student extends Person {
 		this.zustand = s;
 	}
 	
-<<<<<<< HEAD
 	//für grafiken
 	//entsprechende Datasets sind angelegt,
 	//können aber aus irgendeinem grund nicht für ein
@@ -129,11 +128,5 @@ public class Student extends Person {
 	public boolean zustandIstStudiert(){
 		return (this.zustand == Student.Zustand.STUDIERT);
 	}
-	
-	public int getZustand(){
-		return this.zustand;
-	}
-=======
-	
->>>>>>> 5518b182d1988af3d7467da06eef2fd44ae789d4
+
 }

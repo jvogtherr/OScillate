@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Scenario>
 <repast.simphony.dataLoader.engine.ClassNameDataLoaderAction context="OScillate" file="repast.simphony.dataLoader.engine.ClassNameDataLoaderAction_0.xml" />
-<repast.simphony.action.data_set context="OScillate" file="repast.simphony.action.data_set_1.xml" />
-<<<<<<< HEAD
-<repast.simphony.action.data_set context="OScillate" file="repast.simphony.action.data_set_2.xml" />
-<repast.simphony.action.data_set context="OScillate" file="repast.simphony.action.data_set_3.xml" />
-<repast.simphony.action.data_set context="OScillate" file="repast.simphony.action.data_set_4.xml" />
-<repast.simphony.action.histogram_chart context="OScillate" file="repast.simphony.action.histogram_chart_5.xml" />
-=======
-<repast.simphony.action.histogram_chart context="OScillate" file="repast.simphony.action.histogram_chart_2.xml" />
->>>>>>> 5518b182d1988af3d7467da06eef2fd44ae789d4
 </Scenario>
