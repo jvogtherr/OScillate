@@ -1,6 +1,7 @@
 <repast.simphony.data2.engine.DataSetDescriptor>
-  <name>lieblingsbus=11</name>
-  <type>AGGREGATE</type>
+  <name>zustand</name>
+  <type>NON_AGGREGATE</type>
+  <sourceType>OScillate.Student</sourceType>
   <inclTick>true</inclTick>
   <inclBatchRun>false</inclBatchRun>
   <inclRandomSeed>false</inclRandomSeed>
@@ -11,10 +12,19 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>1301291352</hashCode>
+    <hashCode>-1851133412</hashCode>
   </scheduleParams>
   <atEnd>false</atEnd>
-  <methodDataSources class="linked-hash-map"/>
+  <methodDataSources class="linked-hash-map">
+    <entry>
+      <string>Zustand</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Zustand</id>
+        <className>OScillate.Student</className>
+        <methodName>getZustand</methodName>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+  </methodDataSources>
   <countSources class="linked-hash-map"/>
   <customNADataSources class="linked-hash-map"/>
   <customAggDataSources class="linked-hash-map"/>

@@ -107,4 +107,24 @@ public class Student extends Person {
 	public int getPointForEinundzwanzig(){
 		return (this.lieblingsbus == Bus.Linie.EINUNDZWANZIG) ? 1 : 0;
 	}
+	
+	public boolean zustandIstZuhause(){
+		return (this.zustand == Student.Zustand.ZUHAUSE);
+	}
+	
+	public boolean zustandIstWartet(){
+		return (this.zustand == Student.Zustand.WARTET);
+	}
+	
+	public boolean zustandIstFaehrtBus(){
+		return (this.zustand == Student.Zustand.FAEHRT_BUS);
+	}
+	
+	public boolean zustandIstStudiert(){
+		return (this.zustand == Student.Zustand.STUDIERT);
+	}
+	
+	public int getZustand(){
+		return this.zustand;
+	}
 }
