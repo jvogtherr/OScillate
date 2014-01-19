@@ -30,19 +30,22 @@ Wann entscheidet sich ein Student fÃ¼r die 11 und wann fÃ¼r die 21 und welche Fa
 
 ##Notizen
 1 Tag = 180 Ticks => Start eines Tages um 8 Uhr morgens, Ende des Tages um 23 Uhr
-Ein Student faehrt um 8 (25%), meistens um 10 (50%), vielleicht auch 12 (25%) los
-Ein Student bleibt 4 (25%), meistens aber 6 (50%), vielleicht auch 8 Stunden (25%) in der Uni
-=> ein Student ist frühestens um 12 zuhause und spätestens um 20 Uhr
-eins = 11 fährt 2 ticks = 10 Minuten
-zwei = 21 fährt 3 ticks = 15 Minuten
 
-Vorschlag: zufällige Startzeitgenerierung nicht wieder einbauen und bei Zufallswert bleiben, 
-	Schranke für Zufallswert evtl. von Eigenschaften des Studenten abhängig machen (oder als Simulationsparameter setzen)
+Ein Student faehrt um 8 (25%), meistens um 10 (50%), vielleicht auch 12 (25%) los
+
+Ein Student bleibt 4 (25%), meistens aber 6 (50%), vielleicht auch 8 Stunden (25%) in der Uni
+
+=> ein Student ist frï¿½hestens um 12 zuhause und spï¿½testens um 20 Uhr
+
+eins = 11 fï¿½hrt 2 ticks = 10 Minuten
+
+zwei = 21 fï¿½hrt 3 ticks = 15 Minuten
+
 
 ###TODO
-* Eigenschaften der Studenten für Entscheidung mit einbauen (Entscheidungsformel ausdenken)
-* Hintergrundlast wieder einführen (evtl einfach nur Kapazität der Busse reduzieren)
-* Kapazität der Busse fehlt? Kann ein Bus jemals voll sein?
+* Eigenschaften der Studenten fï¿½r Entscheidung mit einbauen (Entscheidungsformel ausdenken)
+* Hintergrundlast wieder einfï¿½hren (evtl einfach nur Kapazitï¿½t der Busse reduzieren)
+* Kapazitï¿½t der Busse fehlt? Kann ein Bus jemals voll sein?
 
 ###Diagramme
 * Wie viele Studenten sind in welchem Zustand? (x: ZustÃ¤nde, y: Anzahl Studenten)
