@@ -9,13 +9,28 @@ public class Student {
 	
 	private boolean fahrtZurUni;
 	
-	public Student() {
+	//private double motivation; //nahe bei 0 => 21, nahe bei 1 => 11
+	private int sozialfaktor; //maximal erträgliche Anzahl von Personen im Bus
+	/*
+	 * führt zu lustigem effekt:
+	 * Die ersten Busse sind immer voll weil:
+	 * zuerst sind die Busse leer, dh bis zur 50. Person steigt jeder ein.
+	 * Danach gibt es immer Personen die noch reinwollen, wenn viele Leute am Neumarkt stehen
+	 * => Leute mit niedrigem Sozialfaktor sind in vollem Bus wenn viel los ist (Realitätsnah!)
+	 */
+	
+	public Student(int soz_min, int soz_max) {
 		if (RandomHelper.nextIntFromTo(0, 1) < 0.5) {
 			this.bevorzugterBus = Buslinie.EINS;
 		} else {
 			this.bevorzugterBus = Buslinie.ZWEI;
 		}		
-		this.fahrtZurUni = true;
+		if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75)
+			this.fahrtZurUni = true;
+		else
+			this.fahrtZurUni = false;
+		//this.motivation = RandomHelper.nextDoubleFromTo(0, 1);
+		this.sozialfaktor = RandomHelper.nextIntFromTo(soz_min, soz_max);
 	}	
 	
 	public Buslinie getBevorzugterBus() {
@@ -30,18 +45,19 @@ public class Student {
 		this.fahrtZurUni = fahrtZurUni;
 	}
 	
-	public Buslinie entscheide(boolean einsKommt, boolean zweiKommt) {
+	public Buslinie entscheide(boolean einsKommt, boolean zweiKommt, int einsFuelle, int zweiFuelle) {
 		// gibt null zurÃ¼ck wenn student nicht fahren will
 		Buslinie entscheidung = null;
 		
+		
 		// lieblingsbus prÃ¼fen
-		if (einsKommt && bevorzugterBus == Buslinie.EINS) {
+		if (einsKommt && bevorzugterBus == Buslinie.EINS && sozialfaktor > einsFuelle) {
 			entscheidung = Buslinie.EINS;
-		} else if (zweiKommt && bevorzugterBus == Buslinie.ZWEI) {
+		} else if (zweiKommt && bevorzugterBus == Buslinie.ZWEI && sozialfaktor > einsFuelle) {
 			entscheidung = Buslinie.ZWEI;
-		} else if (einsKommt) {
+		} else if (einsKommt && sozialfaktor > einsFuelle) {
 			entscheidung = Buslinie.EINS;
-		} else if (zweiKommt) {
+		} else if (zweiKommt && sozialfaktor > einsFuelle) {
 			entscheidung = Buslinie.ZWEI;
 		}
 		

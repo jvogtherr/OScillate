@@ -58,11 +58,22 @@ public class Busverbindung {
 	public void schlafen() {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (Student student : this.studentenZuhause) {
-			if (tickcount % 180 == 0) {
+			if (tickcount % 180 == 0) {	//8 uhr: 25% der Studenten fahren los
+				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75){
+					student.setFahrtZurUni(true);
+					Log.info("Student fährt wieder los");
+				}
+			}
+			if(tickcount % 180 == 24){ //10 uhr: ca 50% der Studenten fahren los
+				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.33){
+					student.setFahrtZurUni(true);
+					Log.info("Student fährt wieder los");
+				}
+			}
+			if(tickcount % 180 == 48){ //12 uhr: der Rest
 				student.setFahrtZurUni(true);
 				Log.info("Student fährt wieder los");
 			}
-			
 		}		
 	}
 	
@@ -86,10 +97,10 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (int i = 0; i < this.studentenNeumarkt.size(); i++) {
 			Student student = this.studentenNeumarkt.get(i);
-			boolean einsKommt = tickcount % 2 == 0;
-			boolean zweiKommt = tickcount % 3 == 0;			
+			boolean einsKommt = tickcount % 3 == 0;
+			boolean zweiKommt = tickcount % 4 == 0;			
 			if (einsKommt || zweiKommt) {
-				Buslinie b = student.entscheide(einsKommt, zweiKommt);
+				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getNeumarktZuUni(), zwei.getNeumarktZuUni());
 				if (b == Buslinie.EINS) {
 					Log.info("Student am Neumarkt steigt in 11 ein");				
 					eins.einsteigen(student);
@@ -140,10 +151,10 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (int i = 0; i < this.studentenUnihaltestelle.size(); i++) {
 			Student student = this.studentenUnihaltestelle.get(i);
-			boolean einsKommt = tickcount % 2 == 0;
-			boolean zweiKommt = tickcount % 3 == 0;			
+			boolean einsKommt = tickcount % 3 == 0;
+			boolean zweiKommt = tickcount % 4 == 0;			
 			if (einsKommt || zweiKommt) {
-				Buslinie b = student.entscheide(einsKommt, zweiKommt);
+				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getUniZuNeumarkt(), zwei.getUniZuNeumarkt());
 				if (b == Buslinie.EINS) {
 					Log.info("Student an der Uni steigt in 11 ein");				
 					eins.einsteigen(student);

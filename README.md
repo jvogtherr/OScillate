@@ -29,8 +29,10 @@ Wann entscheidet sich ein Student fÃ¼r die 11 und wann fÃ¼r die 21 und welche Fa
 
 
 ##Notizen
-1 Tag = 180 Ticks => Start eines Tages um 6 Uhr morgens, Ende des Tages um 21 Uhr
+1 Tag = 180 Ticks => Start eines Tages um 8 Uhr morgens, Ende des Tages um 23 Uhr
+Ein Student faehrt um 8 (25%), meistens um 10 (50%), vielleicht auch 12 (25%) los
 Ein Student bleibt 4 (25%), meistens aber 6 (50%), vielleicht auch 8 Stunden (25%) in der Uni
+=> ein Student ist frühestens um 12 zuhause und spätestens um 20 Uhr
 eins = 11 fährt 2 ticks = 10 Minuten
 zwei = 21 fährt 3 ticks = 15 Minuten
 
