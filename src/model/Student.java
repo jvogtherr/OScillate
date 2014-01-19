@@ -25,9 +25,9 @@ public class Student {
 		} else {
 			this.bevorzugterBus = Buslinie.ZWEI;
 		}		
-		if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75)
-			this.fahrtZurUni = true;
-		else
+//		if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75)
+//			this.fahrtZurUni = true;
+//		else
 			this.fahrtZurUni = false;
 		//this.motivation = RandomHelper.nextDoubleFromTo(0, 1);
 		this.sozialfaktor = RandomHelper.nextIntFromTo(soz_min, soz_max);
@@ -48,16 +48,16 @@ public class Student {
 	public Buslinie entscheide(boolean einsKommt, boolean zweiKommt, int einsFuelle, int zweiFuelle) {
 		// gibt null zurück wenn student nicht fahren will
 		Buslinie entscheidung = null;
-		
+		boolean entschieden = false;
 		
 		// lieblingsbus prüfen
-		if (einsKommt && bevorzugterBus == Buslinie.EINS && sozialfaktor > einsFuelle) {
+		if (einsKommt && bevorzugterBus == Buslinie.EINS && sozialfaktor > einsFuelle+25) {
 			entscheidung = Buslinie.EINS;
-		} else if (zweiKommt && bevorzugterBus == Buslinie.ZWEI && sozialfaktor > einsFuelle) {
+		} else if (zweiKommt && bevorzugterBus == Buslinie.ZWEI && sozialfaktor > zweiFuelle+25) {
 			entscheidung = Buslinie.ZWEI;
 		} else if (einsKommt && sozialfaktor > einsFuelle) {
 			entscheidung = Buslinie.EINS;
-		} else if (zweiKommt && sozialfaktor > einsFuelle) {
+		} else if (zweiKommt && sozialfaktor > zweiFuelle) {
 			entscheidung = Buslinie.ZWEI;
 		}
 		

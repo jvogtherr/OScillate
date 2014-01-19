@@ -58,19 +58,19 @@ public class Busverbindung {
 	public void schlafen() {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (Student student : this.studentenZuhause) {
-			if (tickcount % 180 == 0) {	//8 uhr: 25% der Studenten fahren los
+			if (tickcount % 288 == 96) {	//8 uhr: 25% der Studenten fahren los
 				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75){
 					student.setFahrtZurUni(true);
 					Log.info("Student fährt wieder los");
 				}
 			}
-			if(tickcount % 180 == 24){ //10 uhr: ca 50% der Studenten fahren los
+			if(tickcount % 288 == 120){ //10 uhr: ca 50% der Studenten fahren los
 				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.33){
 					student.setFahrtZurUni(true);
 					Log.info("Student fährt wieder los");
 				}
 			}
-			if(tickcount % 180 == 48){ //12 uhr: der Rest
+			if(tickcount % 288 == 144){ //12 uhr: der Rest
 				student.setFahrtZurUni(true);
 				Log.info("Student fährt wieder los");
 			}

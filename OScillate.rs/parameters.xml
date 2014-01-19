@@ -18,7 +18,7 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
-				<parameter name="soz_max" displayName="Kapazität eines Busses" type="int" 
+				<parameter name="soz_max" displayName="Kapazitaet eines Busses" type="int" 
 						defaultValue="150" 
 						isReadOnly="false" 
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
