@@ -12,8 +12,7 @@ Wann entscheidet sich ein Student f√ºr die 11 und wann f√ºr die 21 und welche Fa
     Fahrgast -> Student | Sonstige(Hintergrundlast)
 
     Student[heterogene Eigenschaften](
-	    Faulheit
-        Eile (zuf√§llig)
+	    Motivation (Beispiel: 0 <= Motivation <= 1, 0 = faul, 0.5 = egal 1 = eilig)
         F√ºlle/Sozialfaktor
         Erstie
         Aufenthaltsdauer (zufall, gewichtet)
@@ -30,6 +29,18 @@ Wann entscheidet sich ein Student f√ºr die 11 und wann f√ºr die 21 und welche Fa
 
 
 ##Notizen
+1 Tag = 180 Ticks => Start eines Tages um 6 Uhr morgens, Ende des Tages um 21 Uhr
+Ein Student bleibt 4 (25%), meistens aber 6 (50%), vielleicht auch 8 Stunden (25%) in der Uni
+eins = 11 f‰hrt 2 ticks = 10 Minuten
+zwei = 21 f‰hrt 3 ticks = 15 Minuten
+
+Vorschlag: zuf‰llige Startzeitgenerierung nicht wieder einbauen und bei Zufallswert bleiben, 
+	Schranke f¸r Zufallswert evtl. von Eigenschaften des Studenten abh‰ngig machen (oder als Simulationsparameter setzen)
+
+###TODO
+* Eigenschaften der Studenten f¸r Entscheidung mit einbauen (Entscheidungsformel ausdenken)
+* Hintergrundlast wieder einf¸hren (evtl einfach nur Kapazit‰t der Busse reduzieren)
+* Kapazit‰t der Busse fehlt? Kann ein Bus jemals voll sein?
 
 ###Diagramme
 * Wie viele Studenten sind in welchem Zustand? (x: Zust√§nde, y: Anzahl Studenten)
@@ -45,5 +56,4 @@ wenn 21 oder 11 voll, suche anderen aus
 evtl: biete m√∂glichkeit stehenzubleiben/hinten anstellen(mit 'ttl') falls erstie & 11 oder bus zu voll (Sozialfaktor vs. Eile)
 
 ####Faulheits-Faktor und Eile-Faktor
-Faulheit und Eile zusammenfassen? => Beispiel: 0 <= Motivation <= 1, 0 = faul, 0.5 = egal 1 = eilig
 verpasseter Bus erh√∂ht Motivationsfaktor

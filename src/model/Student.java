@@ -1,5 +1,6 @@
 package model;
 
+import repast.simphony.random.RandomHelper;
 import enums.Buslinie;
 
 public class Student {
@@ -9,7 +10,7 @@ public class Student {
 	private boolean fahrtZurUni;
 	
 	public Student() {
-		if (Math.random() < 0.5) {
+		if (RandomHelper.nextIntFromTo(0, 1) < 0.5) {
 			this.bevorzugterBus = Buslinie.EINS;
 		} else {
 			this.bevorzugterBus = Buslinie.ZWEI;

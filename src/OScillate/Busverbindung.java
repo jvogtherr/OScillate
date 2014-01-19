@@ -9,6 +9,7 @@ import model.Student;
 import enums.Buslinie;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.random.RandomHelper;
 import util.Log;
 
 public class Busverbindung {
@@ -71,7 +72,7 @@ public class Busverbindung {
 	public void zuhauseNachNeumarkt() {		
 		for (int i = 0; i < this.studentenZuhause.size(); i++) {
 			Student student = this.studentenZuhause.get(i);			
-			if (student.getFahrtZurUni() && Math.random() < 0.3) { // TODO: Entscheidung: muss student zur uni?
+			if (student.getFahrtZurUni() && RandomHelper.nextDoubleFromTo(0, 1) < 0.3) { // TODO: Entscheidung: muss student zur uni?
 				Log.info("neuer Student am Neumarkt");
 				student.setFahrtZurUni(true);
 				this.studentenNeumarkt.add(student);
@@ -108,12 +109,12 @@ public class Busverbindung {
 		studenten.addAll(zwei.aussteigen(true));
 		for (Student student : studenten) {
 			// Studenten in Uni-Map einordnen mit verbleibender Uni Zeit
-			int uniZeit = 50;
-			if (Math.random() > 0.5) {
-				uniZeit += 20;
+			int uniZeit = 48; // 4 Stunden 
+			if (RandomHelper.nextIntFromTo(0, 1) > 0.5) {
+				uniZeit += 24; // insgesamt 6 Stunden
 			}
-			if (Math.random() > 0.5) {
-				uniZeit += 30;
+			if (RandomHelper.nextIntFromTo(0, 1) > 0.5) {
+				uniZeit += 24; // insgesamt 8 Stunden
 			}
 			studentenUni.put(student, uniZeit);
 			Log.info("Student kommt an Uni an");
