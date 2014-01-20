@@ -47,6 +47,13 @@ zwei = 21 f�hrt 3 ticks = 15 Minuten
 * Hintergrundlast wieder einf�hren (evtl einfach nur Kapazit�t der Busse reduzieren)
 * Kapazit�t der Busse fehlt? Kann ein Bus jemals voll sein?
 
+Ideen:
+* aging Funktion für bevorzugterBus
+* soziales Netzwerk korrelliert mit sozialfaktor
+* Hintergrundlast in Bussen  bezogen auf Funktion
+* nicht: wie lange bleiben wir, sondern: wann fahren wir nach hause
+* if( 94<tickcount%288<98 ){ gauss(tickcount%180) }
+
 ###Diagramme
 * Wie viele Studenten sind in welchem Zustand? (x: Zustände, y: Anzahl Studenten)
 * Bus-Beliebtheit (x: Bus-Linie, y: Anzahl Studenten)
