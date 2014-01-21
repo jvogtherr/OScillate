@@ -6,6 +6,7 @@ import enums.Buslinie;
 public class Student {
 	
 	private Buslinie bevorzugterBus;
+	private int losgehzeit;
 	
 	private boolean fahrtZurUni;
 	
@@ -31,6 +32,7 @@ public class Student {
 			this.fahrtZurUni = false;
 		//this.motivation = RandomHelper.nextDoubleFromTo(0, 1);
 		this.sozialfaktor = RandomHelper.nextIntFromTo(soz_min, soz_max);
+		this.losgehzeit = -1;
 	}	
 	
 	public Buslinie getBevorzugterBus() {
@@ -43,6 +45,14 @@ public class Student {
 	
 	public void setFahrtZurUni(boolean fahrtZurUni) {
 		this.fahrtZurUni = fahrtZurUni;
+	}
+	
+	public void setLosgehzeit(int zeit){
+		this.losgehzeit = zeit;
+	}
+	
+	public int getLosgehzeit(){
+		return this.losgehzeit;
 	}
 	
 	public Buslinie entscheide(boolean einsKommt, boolean zweiKommt, int einsFuelle, int zweiFuelle) {

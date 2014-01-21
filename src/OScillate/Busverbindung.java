@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+import cern.jet.random.Normal;
 import model.Bus;
 import model.Student;
 import enums.Buslinie;
@@ -22,6 +23,10 @@ public class Busverbindung {
 	private Bus eins;
 	private Bus zwei;
 	
+	private Normal n8uhr;
+	private Normal n10uhr;
+	private Normal n12uhr;
+	
 	public Busverbindung() {
 		this.studentenZuhause = new LinkedList<Student>();
 		this.studentenNeumarkt = new LinkedList<Student>();
@@ -31,6 +36,10 @@ public class Busverbindung {
 		
 		this.eins = new Bus(Buslinie.EINS);
 		this.zwei = new Bus(Buslinie.ZWEI);
+		
+		this.n8uhr = RandomHelper.createNormal(96, 2);
+		this.n10uhr = RandomHelper.createNormal(120, 2);
+		this.n12uhr = RandomHelper.createNormal(144, 2);
 	}
 	
 	public void neuerStudent(Student student) {
@@ -58,22 +67,43 @@ public class Busverbindung {
 	public void schlafen() {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (Student student : this.studentenZuhause) {
-			if (tickcount % 288 == 96) {	//8 uhr: 25% der Studenten fahren los
+			
+// Rush hour variante: Drei Sto�zeiten
+//			//8 uhr: 25% der Studenten fahren los
+//			if(tickcount % 288 == 96){
+//				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.33){
+//					student.setFahrtZurUni(true);
+//					Log.info("Student fährt wieder los");
+//				}
+//			//10 uhr: ca 50% der Studenten fahren los
+//			} else if(tickcount % 288 == 120){ 
+//				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.33){
+//					student.setFahrtZurUni(true);
+//					Log.info("Student fährt wieder los");
+//				}
+//			//12 uhr: der Rest
+//			} else if(tickcount % 288 == 144){ 
+//				student.setFahrtZurUni(true);
+//				Log.info("Student fährt wieder los");
+//			}		
+			
+// Realistische Variante: Ankunftszeiten an Neumarkt sind Normalverteilt
+// Beispiel 8 Uhr: Schnellster Student ist um 7:35 am Neumarkt, 
+// der Langsamste um 8:25
+			if(90 == tickcount % 288) {	
 				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75){
-					student.setFahrtZurUni(true);
-					Log.info("Student fährt wieder los");
+					student.setLosgehzeit(n8uhr.nextInt());
 				}
-			}
-			if(tickcount % 288 == 120){ //10 uhr: ca 50% der Studenten fahren los
+			} else if(114 == tickcount % 288){
 				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.33){
-					student.setFahrtZurUni(true);
-					Log.info("Student fährt wieder los");
+					student.setLosgehzeit(n10uhr.nextInt());
 				}
+			} else if(138 == tickcount % 288){
+				student.setLosgehzeit(n12uhr.nextInt());
 			}
-			if(tickcount % 288 == 144){ //12 uhr: der Rest
+			if(tickcount % 288 == student.getLosgehzeit()){
 				student.setFahrtZurUni(true);
-				Log.info("Student fährt wieder los");
-			}
+			}			
 		}		
 	}
 	
@@ -97,8 +127,8 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (int i = 0; i < this.studentenNeumarkt.size(); i++) {
 			Student student = this.studentenNeumarkt.get(i);
-			boolean einsKommt = tickcount % 3 == 0;
-			boolean zweiKommt = tickcount % 4 == 0;			
+			boolean einsKommt = tickcount % 1 == 0;
+			boolean zweiKommt = tickcount % 2 == 0;			
 			if (einsKommt || zweiKommt) {
 				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getNeumarktZuUni(), zwei.getNeumarktZuUni());
 				if (b == Buslinie.EINS) {
@@ -151,8 +181,8 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (int i = 0; i < this.studentenUnihaltestelle.size(); i++) {
 			Student student = this.studentenUnihaltestelle.get(i);
-			boolean einsKommt = tickcount % 3 == 0;
-			boolean zweiKommt = tickcount % 4 == 0;			
+			boolean einsKommt = tickcount % 1 == 0;
+			boolean zweiKommt = tickcount % 2 == 0;			
 			if (einsKommt || zweiKommt) {
 				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getUniZuNeumarkt(), zwei.getUniZuNeumarkt());
 				if (b == Buslinie.EINS) {
