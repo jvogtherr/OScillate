@@ -8,34 +8,26 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 
 ##Modellierung
 
-####Agent: Fahrgast
-    Fahrgast -> Student | Sonstige(Hintergrundlast)
+####Agent: Student
 
     Student[heterogene Eigenschaften](
-	    Motivation (Beispiel: 0 <= Motivation <= 1, 0 = faul, 0.5 = egal 1 = eilig)
-        Fülle/Sozialfaktor
+	bevorzugterBus
+        Sozialfaktor
         Erstie
-        Aufenthaltsdauer (zufall, gewichtet)
-        Startzeit (zufall, gewichtet)
-        Zustand (
-            zuhause
-            wartet am Neumarkt(queue)
-            fährt 21(3 zeitschritte)
-            fährt 11(2 zeitschritte)
-            studiert
-            wartet an der uni(queue)
-        )
+        uniZeit
+        losgehzeit
+        punkteEins (Meinung zu jeweiligem Bus)
+        punkteZwei (maximum der beiden bestimmt bevorzugterBus)
     )
 
 
 ##Notizen
-1 Tag = 180 Ticks => Start eines Tages um 8 Uhr morgens, Ende des Tages um 23 Uhr
-
-Ein Student faehrt um 8 (25%), meistens um 10 (50%), vielleicht auch 12 (25%) los
-
+1 Tag = 288 Ticks
+25% der Studenten fahren gleichverteilt um 8, 50% um 10 und der Rest um 12 los
 Ein Student bleibt 4 (25%), meistens aber 6 (50%), vielleicht auch 8 Stunden (25%) in der Uni
-
-=> ein Student ist fr�hestens um 12 zuhause und sp�testens um 20 Uhr
+der Plan hierbei ist:
+nach obiger Entscheidung schaue, welcher Zeitpunkt (144, 168, 192, 216 oder 240) am nahesten bei 'jetzt + entschiedene Aufenthaltsdauer' liegt und setzte uniZeit auf 'bester passender endzeitpunkt - jetzt'
+Problem dabei ist: uniZeit muss folglich auch am Neumarkt und im Bus runtergezählt werden...
 
 eins = 11 f�hrt 2 ticks = 10 Minuten
 
@@ -43,29 +35,13 @@ zwei = 21 f�hrt 3 ticks = 15 Minuten
 
 
 ###TODO
-* Eigenschaften der Studenten f�r Entscheidung mit einbauen (Entscheidungsformel ausdenken)
-* Hintergrundlast wieder einf�hren (evtl einfach nur Kapazit�t der Busse reduzieren)
-* Kapazit�t der Busse fehlt? Kann ein Bus jemals voll sein?
+* Graphen fuer bevorzugterBus in Student (habe ich nicht hinbekommen)
+* Entscheidung "wie lange bleibe ich" muss umgebaut werden in "wann fahre ich nach hause" mit festen Zeiten ab 12 bis 20 uhr alle 2 Stunden und muss schon stattfinden in 'geheZuNeumarkt'
 
-Ideen:
-* aging Funktion für bevorzugterBus
+###Ideen:
 * soziales Netzwerk korrelliert mit sozialfaktor
-* Hintergrundlast in Bussen  bezogen auf Funktion
-* nicht: wie lange bleiben wir, sondern: wann fahren wir nach hause
-* if( 94<tickcount%288<98 ){ gauss(tickcount%180) }
 
 ###Diagramme
-* Wie viele Studenten sind in welchem Zustand? (x: Zustände, y: Anzahl Studenten)
-* Bus-Beliebtheit (x: Bus-Linie, y: Anzahl Studenten)
+* Wieviele Fahrgäste hatten die Linien insgesamt? (stetig steigender Zeitgraph)
+* wieviele Studenten bevorzugen welchen Bus? (Histogramm?)
 
-* Zustände über Zeit (x: Zeit, y: Anzahl der Studenten, pro Zustand ein Graph)
-* Bus-Beliebtheit über Zeit (x: Zeit, y: Anzahl der Studenten, pro Bus-Linie ein Graph)
-
-####Schlange
-21 & 11 kommt, 
-queue.head entscheidet sich für einen
-wenn 21 oder 11 voll, suche anderen aus
-evtl: biete möglichkeit stehenzubleiben/hinten anstellen(mit 'ttl') falls erstie & 11 oder bus zu voll (Sozialfaktor vs. Eile)
-
-####Faulheits-Faktor und Eile-Faktor
-verpasseter Bus erhöht Motivationsfaktor
