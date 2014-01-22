@@ -42,6 +42,28 @@ public class Busverbindung {
 		this.n12uhr = RandomHelper.createNormal(144, 2);
 	}
 	
+	public static int getFuelle(int id){
+		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
+		tickcount = tickcount % 288;
+		switch(id){
+			case 0:
+				return 0;
+			case 1:
+				double lastfunktion = -(0.000002*Math.pow(tickcount-156.0, 4.0))+(0.014*Math.pow(tickcount-156.0, 2.0))+10;
+				if(lastfunktion < 0)
+					lastfunktion = 0;
+				return (int)lastfunktion;
+			default:
+				return 0;
+		}
+
+	}
+	
+	//fuer graphen
+	public int getUnstaticFuelle(){
+		return Busverbindung.getFuelle(1);
+	}
+	
 	public void neuerStudent(Student student) {
 		Log.info("neuer Sutdent zuhause");
 		this.studentenZuhause.add(student);
@@ -127,8 +149,8 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (int i = 0; i < this.studentenNeumarkt.size(); i++) {
 			Student student = this.studentenNeumarkt.get(i);
-			boolean einsKommt = tickcount % 1 == 0;
-			boolean zweiKommt = tickcount % 2 == 0;			
+			boolean einsKommt = tickcount % 2 == 0;
+			boolean zweiKommt = tickcount % 3 == 0;			
 			if (einsKommt || zweiKommt) {
 				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getNeumarktZuUni(), zwei.getNeumarktZuUni());
 				if (b == Buslinie.EINS) {
@@ -181,8 +203,8 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (int i = 0; i < this.studentenUnihaltestelle.size(); i++) {
 			Student student = this.studentenUnihaltestelle.get(i);
-			boolean einsKommt = tickcount % 1 == 0;
-			boolean zweiKommt = tickcount % 2 == 0;			
+			boolean einsKommt = tickcount % 2 == 0;
+			boolean zweiKommt = tickcount % 3 == 0;			
 			if (einsKommt || zweiKommt) {
 				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getUniZuNeumarkt(), zwei.getUniZuNeumarkt());
 				if (b == Buslinie.EINS) {

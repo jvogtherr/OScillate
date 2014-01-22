@@ -1,5 +1,6 @@
 package model;
 
+import OScillate.Busverbindung;
 import repast.simphony.random.RandomHelper;
 import enums.Buslinie;
 
@@ -58,7 +59,9 @@ public class Student {
 	public Buslinie entscheide(boolean einsKommt, boolean zweiKommt, int einsFuelle, int zweiFuelle) {
 		// gibt null zurück wenn student nicht fahren will
 		Buslinie entscheidung = null;
-		boolean entschieden = false;
+		
+		//Hintergrundlast
+		einsFuelle = einsFuelle - Busverbindung.getFuelle(1);
 		
 		// lieblingsbus prüfen
 		if (einsKommt && bevorzugterBus == Buslinie.EINS && sozialfaktor > einsFuelle+25) {
