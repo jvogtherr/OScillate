@@ -3,6 +3,8 @@ package model;
 import OScillate.Busverbindung;
 import repast.simphony.random.RandomHelper;
 import enums.Buslinie;
+import util.Log;
+
 
 public class Student {
 	
@@ -11,27 +13,25 @@ public class Student {
 	
 	private boolean fahrtZurUni;
 	
-	//private double motivation; //nahe bei 0 => 21, nahe bei 1 => 11
 	private int sozialfaktor; //maximal erträgliche Anzahl von Personen im Bus
-	/*
-	 * führt zu lustigem effekt:
-	 * Die ersten Busse sind immer voll weil:
-	 * zuerst sind die Busse leer, dh bis zur 50. Person steigt jeder ein.
-	 * Danach gibt es immer Personen die noch reinwollen, wenn viele Leute am Neumarkt stehen
-	 * => Leute mit niedrigem Sozialfaktor sind in vollem Bus wenn viel los ist (Realitätsnah!)
-	 */
+	private int punkteEins;
+	private int punkteZwei;
+	
 	
 	public Student(int soz_min, int soz_max) {
 		if (RandomHelper.nextIntFromTo(0, 1) < 0.5) {
 			this.bevorzugterBus = Buslinie.EINS;
+			this.punkteEins = 1;
+			this.punkteZwei = 0;
 		} else {
 			this.bevorzugterBus = Buslinie.ZWEI;
+			this.punkteZwei = 1;
+			this.punkteEins = 0;
 		}		
 //		if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75)
 //			this.fahrtZurUni = true;
 //		else
-			this.fahrtZurUni = false;
-		//this.motivation = RandomHelper.nextDoubleFromTo(0, 1);
+		this.fahrtZurUni = false;
 		this.sozialfaktor = RandomHelper.nextIntFromTo(soz_min, soz_max);
 		this.losgehzeit = -1;
 	}	
@@ -56,6 +56,10 @@ public class Student {
 		return this.losgehzeit;
 	}
 	
+	public int getSozialfaktor(){
+		return this.sozialfaktor;
+	}
+	
 	public Buslinie entscheide(boolean einsKommt, boolean zweiKommt, int einsFuelle, int zweiFuelle) {
 		// gibt null zurÃ¼ck wenn student nicht fahren will
 		Buslinie entscheidung = null;
@@ -73,8 +77,20 @@ public class Student {
 		} else if (zweiKommt && sozialfaktor > zweiFuelle) {
 			entscheidung = Buslinie.ZWEI;
 		}
-		
+
 		return entscheidung;
 	}
 	
+	public void updateBevorzugterBus(int valueEins, int valueZwei){
+		//Log.info("UPDATE: " + punkteEins + " + " + valueEins + "; " + punkteZwei + " + " + valueZwei);
+		punkteEins += valueEins;
+		punkteZwei += valueZwei;
+		Buslinie previous = bevorzugterBus;
+		if(punkteEins == punkteZwei); //wechsle nur wenn eine Punktzahl groesser!
+		else
+			bevorzugterBus = punkteEins > punkteZwei ? Buslinie.EINS : Buslinie.ZWEI;
+		if(previous != bevorzugterBus){
+			Log.error("Student hat bevorzugten Bus gewechselt");
+		}
+	}
 }

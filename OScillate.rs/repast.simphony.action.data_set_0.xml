@@ -1,5 +1,5 @@
 <repast.simphony.data2.engine.DataSetDescriptor>
-  <name>Busse</name>
+  <name>Orte</name>
   <type>AGGREGATE</type>
   <inclTick>true</inclTick>
   <inclBatchRun>false</inclBatchRun>
@@ -11,43 +11,61 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>-177047927</hashCode>
+    <hashCode>1821641541</hashCode>
   </scheduleParams>
   <atEnd>false</atEnd>
   <methodDataSources class="linked-hash-map">
     <entry>
-      <string>11NeumarktZuUni</string>
+      <string>Zuhause</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>11NeumarktZuUni</id>
+        <id>Zuhause</id>
         <className>OScillate.Busverbindung</className>
-        <methodName>getEinsNeumarktZuUni</methodName>
+        <methodName>getStudentenZuhause</methodName>
         <aggType>SUM</aggType>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
     <entry>
-      <string>11UniZuNeumarkt</string>
+      <string>Neumarkt</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>11UniZuNeumarkt</id>
+        <id>Neumarkt</id>
         <className>OScillate.Busverbindung</className>
-        <methodName>getEinsUniZuNeumarkt</methodName>
+        <methodName>getStudentenNeumarkt</methodName>
         <aggType>SUM</aggType>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
     <entry>
-      <string>21NeumarktZuUni</string>
+      <string>Bus Neumarkt-&gt;Uni</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>21NeumarktZuUni</id>
+        <id>Bus Neumarkt-&gt;Uni</id>
         <className>OScillate.Busverbindung</className>
-        <methodName>getZweiNeumarktZuUni</methodName>
+        <methodName>getNeumarktZuUniGesamt</methodName>
         <aggType>SUM</aggType>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
     <entry>
-      <string>21UniZuNeumarkt</string>
+      <string>Uni</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>21UniZuNeumarkt</id>
+        <id>Uni</id>
         <className>OScillate.Busverbindung</className>
-        <methodName>getZweiUniZuNeumarkt</methodName>
+        <methodName>getStudentenUni</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Uni Haltestelle</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Uni Haltestelle</id>
+        <className>OScillate.Busverbindung</className>
+        <methodName>getStudentenUnihaltestelle</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>Bus Uni H.-&gt;Zuhause</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>Bus Uni H.-&gt;Zuhause</id>
+        <className>OScillate.Busverbindung</className>
+        <methodName>getUniZuNeumarktGesamt</methodName>
         <aggType>SUM</aggType>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>

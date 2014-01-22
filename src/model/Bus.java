@@ -37,8 +37,27 @@ public class Bus {
 	}
 	
 	public List<Student> aussteigen(boolean uni) {
-		List<Student> studenten = new LinkedList<Student>();		
+		List<Student> studenten = new LinkedList<Student>();
 		for (Student student : this.map.keySet()) {
+			if(this.map.get(student) <= 0 && student.getFahrtZurUni() == uni) {
+				//reflektiere Entscheidung
+				if(this.map.keySet().size() > student.getSozialfaktor() + 50){
+					if(this.linie == Buslinie.EINS){
+						student.updateBevorzugterBus(-1, 0);
+					} else {
+						student.updateBevorzugterBus(0, -1);
+					}	
+				} else {
+					if(this.linie == Buslinie.EINS){
+						student.updateBevorzugterBus(1, 0);
+					} else {
+						student.updateBevorzugterBus(0, 1);
+					}
+				}
+			}
+		}
+		for (Student student : this.map.keySet()) {
+			//steige aus
 			if (this.map.get(student) <= 0 && student.getFahrtZurUni() == uni) {
 				studenten.add(student);
 				this.map.remove(student);

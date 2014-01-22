@@ -65,7 +65,7 @@ public class Busverbindung {
 	}
 	
 	public void neuerStudent(Student student) {
-		Log.info("neuer Sutdent zuhause");
+		Log.info("neuer Student zuhause");
 		this.studentenZuhause.add(student);
 	}
 	

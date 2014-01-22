@@ -1,5 +1,5 @@
 <repast.simphony.data2.engine.DataSetDescriptor>
-  <name>Busse</name>
+  <name>Lastfunktion</name>
   <type>AGGREGATE</type>
   <inclTick>true</inclTick>
   <inclBatchRun>false</inclBatchRun>
@@ -11,43 +11,16 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>-177047927</hashCode>
+    <hashCode>1343204653</hashCode>
   </scheduleParams>
   <atEnd>false</atEnd>
   <methodDataSources class="linked-hash-map">
     <entry>
-      <string>11NeumarktZuUni</string>
+      <string>fuelle</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>11NeumarktZuUni</id>
+        <id>fuelle</id>
         <className>OScillate.Busverbindung</className>
-        <methodName>getEinsNeumarktZuUni</methodName>
-        <aggType>SUM</aggType>
-      </repast.simphony.data2.engine.MethodDataSourceDefinition>
-    </entry>
-    <entry>
-      <string>11UniZuNeumarkt</string>
-      <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>11UniZuNeumarkt</id>
-        <className>OScillate.Busverbindung</className>
-        <methodName>getEinsUniZuNeumarkt</methodName>
-        <aggType>SUM</aggType>
-      </repast.simphony.data2.engine.MethodDataSourceDefinition>
-    </entry>
-    <entry>
-      <string>21NeumarktZuUni</string>
-      <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>21NeumarktZuUni</id>
-        <className>OScillate.Busverbindung</className>
-        <methodName>getZweiNeumarktZuUni</methodName>
-        <aggType>SUM</aggType>
-      </repast.simphony.data2.engine.MethodDataSourceDefinition>
-    </entry>
-    <entry>
-      <string>21UniZuNeumarkt</string>
-      <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>21UniZuNeumarkt</id>
-        <className>OScillate.Busverbindung</className>
-        <methodName>getZweiUniZuNeumarkt</methodName>
+        <methodName>getUnstaticFuelle</methodName>
         <aggType>SUM</aggType>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
