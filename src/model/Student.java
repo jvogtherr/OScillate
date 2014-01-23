@@ -13,13 +13,17 @@ public class Student {
 	
 	private boolean fahrtZurUni;
 	
-	private int sozialfaktor; //maximal erträgliche Anzahl von Personen im Bus
+	private int sozialfaktor; //maximal ertrï¿½gliche Anzahl von Personen im Bus
 	private int punkteEins;
 	private int punkteZwei;
+//	private boolean erstie;
 	
-	
-	public Student(int soz_min, int soz_max) {
-		if (RandomHelper.nextIntFromTo(0, 1) < 0.5) {
+	public Student(int soz_min, int soz_max, boolean erstie) {
+		if(erstie){
+			this.bevorzugterBus = Buslinie.ZWEI;
+			this.punkteZwei = 20;
+			this.punkteEins = 0;
+		} else if (RandomHelper.nextIntFromTo(0, 1) < 0.5) {
 			this.bevorzugterBus = Buslinie.EINS;
 			this.punkteEins = 1;
 			this.punkteZwei = 0;

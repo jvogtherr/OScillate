@@ -17,13 +17,21 @@ public class OScillateBuilder implements ContextBuilder<Object> {
 		int num_studenten = (Integer)p.getValue("num_Studenten");
 		int soz_min = (Integer)p.getValue("soz_min");
 		int soz_max = (Integer)p.getValue("soz_max");
-		//idee für erstie parameter: parameter einstellbar machen und im konstruktor entsprechend mitgeben
+		int ersties = (Integer)p.getValue("ersties");
+		//idee fï¿½r erstie parameter: parameter einstellbar machen und im konstruktor entsprechend mitgeben
 		
 		Busverbindung busv = new Busverbindung();				
 		for (int i = 0; i < num_studenten; i++) {
-			Student student = new Student(soz_min, soz_max);
+			Student student;
+			if(ersties-- > 0){
+				student = new Student(soz_min, soz_max, true);
+			}else{
+				student = new Student(soz_min, soz_max, false);
+			}
+				
 			busv.neuerStudent(student);
 		}		
+		
 		context.add(busv);
 		
 		Log.info("context initialized");
