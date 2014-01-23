@@ -150,7 +150,7 @@ public class Busverbindung {
 			boolean einsKommt = tickcount % 2 == 0;
 			boolean zweiKommt = tickcount % 3 == 0;			
 			if (einsKommt || zweiKommt) {
-				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getNeumarktZuUni(), zwei.getNeumarktZuUni());
+				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getBusAmNeumarkt(), zwei.getBusAmNeumarkt());
 				if (b == Buslinie.EINS) {
 					Log.info("Student am Neumarkt steigt in 11 ein");				
 					eins.einsteigen(student);
@@ -204,7 +204,7 @@ public class Busverbindung {
 			boolean einsKommt = tickcount % 2 == 0;
 			boolean zweiKommt = tickcount % 3 == 0;			
 			if (einsKommt || zweiKommt) {
-				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getUniZuNeumarkt(), zwei.getUniZuNeumarkt());
+				Buslinie b = student.entscheide(einsKommt, zweiKommt, eins.getBusAnUni(), zwei.getBusAnUni());
 				if (b == Buslinie.EINS) {
 					Log.info("Student an der Uni steigt in 11 ein");				
 					eins.einsteigen(student);

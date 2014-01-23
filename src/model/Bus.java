@@ -34,8 +34,7 @@ public class Bus {
 		this.map.put(student, fahrtzeit);
 	}
 	
-	public List<Student> aussteigen(boolean uni) {
-		List<Student> studenten = new LinkedList<Student>();
+	public List<Student> aussteigen(boolean uni) {		
 		for (Student student : this.map.keySet()) {
 			if(this.map.get(student) <= 0 && student.getFahrtZurUni() == uni) {
 				//reflektiere Entscheidung
@@ -54,6 +53,7 @@ public class Bus {
 				}
 			}
 		}
+		List<Student> studenten = new LinkedList<Student>();
 		for (Student student : this.map.keySet()) {
 			//steige aus
 			if (this.map.get(student) <= 0 && student.getFahrtZurUni() == uni) {
@@ -63,6 +63,22 @@ public class Bus {
 		}
 		
 		return studenten;
+	}
+	
+	public int getBusAmNeumarkt() {
+		int result = 0;
+		for (Student student : this.map.keySet()) {
+			if (student.getFahrtZurUni() && map.get(student) == fahrtzeit) result++;
+		}
+		return result;
+	}
+	
+	public int getBusAnUni() {
+		int result = 0;
+		for (Student student : this.map.keySet()) {
+			if (!student.getFahrtZurUni() && map.get(student) == fahrtzeit) result++;
+		}
+		return result;
 	}
 	
 	public int getNeumarktZuUni() {

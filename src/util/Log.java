@@ -22,7 +22,7 @@ public class Log {
 		enabled = true;
 		
 		// set log level:
-		level = 4;		
+		level = 2;		
 	}
 	/**********************/
 	

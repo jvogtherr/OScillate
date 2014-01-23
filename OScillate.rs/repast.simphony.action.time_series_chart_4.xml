@@ -33,18 +33,6 @@
       </SeriesData>
     </entry>
     <entry>
-      <string>Uni Haltestelle</string>
-      <SeriesData>
-        <label>Uni Haltestelle</label>
-        <color>
-          <red>255</red>
-          <green>200</green>
-          <blue>0</blue>
-          <alpha>255</alpha>
-        </color>
-      </SeriesData>
-    </entry>
-    <entry>
       <string>Zuhause</string>
       <SeriesData>
         <label>Zuhause</label>
@@ -52,6 +40,18 @@
           <red>0</red>
           <green>0</green>
           <blue>255</blue>
+          <alpha>255</alpha>
+        </color>
+      </SeriesData>
+    </entry>
+    <entry>
+      <string>Uni Haltestelle</string>
+      <SeriesData>
+        <label>Uni Haltestelle</label>
+        <color>
+          <red>255</red>
+          <green>200</green>
+          <blue>0</blue>
           <alpha>255</alpha>
         </color>
       </SeriesData>

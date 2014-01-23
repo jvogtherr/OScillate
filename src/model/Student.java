@@ -88,15 +88,22 @@ public class Student {
 		}
 		
 		// lieblingsbus prüfen
-		if (einsKommt && (bevorzugterBus == Buslinie.EINS) && (sozialfaktor > einsFuelle)) {
+		if (einsKommt && (bevorzugterBus == Buslinie.EINS) && (sozialfaktor >= einsFuelle)) {
 			entscheidung = Buslinie.EINS;
-		} else if (zweiKommt && (bevorzugterBus == Buslinie.ZWEI) && (sozialfaktor > zweiFuelle)) {
+		} else if (zweiKommt && (bevorzugterBus == Buslinie.ZWEI) && (sozialfaktor >= zweiFuelle)) {
 			entscheidung = Buslinie.ZWEI;
-		} else if (einsKommt && (sozialfaktor > einsFuelle)) {
+		} else if (einsKommt && (sozialfaktor >= einsFuelle)) {
 			entscheidung = Buslinie.EINS;
-		} else if (zweiKommt && (sozialfaktor > zweiFuelle)) {
+		} else if (zweiKommt && (sozialfaktor >= zweiFuelle)) {
 			entscheidung = Buslinie.ZWEI;
 		}
+		
+		if (entscheidung == null) {
+			Log.warning("student weiß nicht was los ist");
+			Log.warning(einsFuelle+" "+zweiFuelle);
+		}
+		
+		Log.warning("Entscheidung: "+entscheidung);
 
 		return entscheidung;
 	}
@@ -110,7 +117,7 @@ public class Student {
 		else
 			bevorzugterBus = punkteEins > punkteZwei ? Buslinie.EINS : Buslinie.ZWEI;
 		if(previous != bevorzugterBus){
-			Log.error("Student hat bevorzugten Bus gewechselt");
+			Log.info("Student hat bevorzugten Bus gewechselt");
 			if(erstie)
 				erstie = false;
 		}
