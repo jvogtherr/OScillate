@@ -16,14 +16,14 @@ public class Student {
 	private int sozialfaktor; //maximal ertr�gliche Anzahl von Personen im Bus
 	private int punkteEins;
 	private int punkteZwei;
-//	private boolean erstie;
+	private boolean erstie;
 	
 	public Student(int soz_min, int soz_max, boolean erstie) {
 		
 		//initialentscheidung zufaellig
 		if(erstie){
 			this.bevorzugterBus = Buslinie.ZWEI;
-			this.punkteZwei = 20;
+			this.punkteZwei = 10;
 			this.punkteEins = 0;
 		} else if (RandomHelper.nextIntFromTo(0, 1) < 0.5) {
 			this.bevorzugterBus = Buslinie.EINS;
@@ -38,6 +38,7 @@ public class Student {
 		this.fahrtZurUni = false;
 		this.sozialfaktor = RandomHelper.nextIntFromTo(soz_min, soz_max);
 		this.losgehzeit = -1;
+		this.erstie = erstie;
 	}	
 	
 	public Buslinie getBevorzugterBus() {
@@ -64,21 +65,36 @@ public class Student {
 		return this.sozialfaktor;
 	}
 	
+	public boolean getErstie(){
+		return this.erstie;
+	}
+	
+//	public void setErstie(boolean erstie){
+//		this.erstie = erstie;
+//	}
+	
 	public Buslinie entscheide(boolean einsKommt, boolean zweiKommt, int einsFuelle, int zweiFuelle) {
 		// gibt null zurück wenn student nicht fahren will
 		Buslinie entscheidung = null;
 		
 		//Hintergrundlast
-		einsFuelle = einsFuelle - Busverbindung.getFuelle(1);
+		einsFuelle = einsFuelle + Busverbindung.getFuelle(0);
+		
+		if(erstie){
+			if(zweiKommt && sozialfaktor > zweiFuelle)
+				return Buslinie.ZWEI;
+			else
+				return null;
+		}
 		
 		// lieblingsbus prüfen
-		if (einsKommt && bevorzugterBus == Buslinie.EINS && sozialfaktor > einsFuelle+25) {
+		if (einsKommt && (bevorzugterBus == Buslinie.EINS) && (sozialfaktor > einsFuelle)) {
 			entscheidung = Buslinie.EINS;
-		} else if (zweiKommt && bevorzugterBus == Buslinie.ZWEI && sozialfaktor > zweiFuelle+25) {
+		} else if (zweiKommt && (bevorzugterBus == Buslinie.ZWEI) && (sozialfaktor > zweiFuelle)) {
 			entscheidung = Buslinie.ZWEI;
-		} else if (einsKommt && sozialfaktor > einsFuelle) {
+		} else if (einsKommt && (sozialfaktor > einsFuelle)) {
 			entscheidung = Buslinie.EINS;
-		} else if (zweiKommt && sozialfaktor > zweiFuelle) {
+		} else if (zweiKommt && (sozialfaktor > zweiFuelle)) {
 			entscheidung = Buslinie.ZWEI;
 		}
 
@@ -95,6 +111,8 @@ public class Student {
 			bevorzugterBus = punkteEins > punkteZwei ? Buslinie.EINS : Buslinie.ZWEI;
 		if(previous != bevorzugterBus){
 			Log.error("Student hat bevorzugten Bus gewechselt");
+			if(erstie)
+				erstie = false;
 		}
 	}
 }
