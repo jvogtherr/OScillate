@@ -2,8 +2,6 @@ package OScillate;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 import cern.jet.random.Normal;
 import model.Bus;
 import model.Student;
@@ -90,7 +88,7 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (Student student : this.studentenZuhause) {
 			
-// Rush hour variante: Drei Stoßzeiten
+// Rush hour variante: Drei Stoï¿½zeiten
 //			//8 uhr: 25% der Studenten fahren los
 //			if(tickcount % 288 == 96){
 //				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.33){

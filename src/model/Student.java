@@ -19,6 +19,8 @@ public class Student {
 //	private boolean erstie;
 	
 	public Student(int soz_min, int soz_max, boolean erstie) {
+		
+		//initialentscheidung zufaellig
 		if(erstie){
 			this.bevorzugterBus = Buslinie.ZWEI;
 			this.punkteZwei = 20;
@@ -32,9 +34,7 @@ public class Student {
 			this.punkteZwei = 1;
 			this.punkteEins = 0;
 		}		
-//		if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75)
-//			this.fahrtZurUni = true;
-//		else
+		
 		this.fahrtZurUni = false;
 		this.sozialfaktor = RandomHelper.nextIntFromTo(soz_min, soz_max);
 		this.losgehzeit = -1;
