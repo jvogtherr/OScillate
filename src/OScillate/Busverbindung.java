@@ -2,12 +2,14 @@ package OScillate;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+
 import cern.jet.random.Normal;
 import model.Bus;
 import model.Student;
 import enums.Buslinie;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
+import repast.simphony.parameter.Parameters;
 import repast.simphony.random.RandomHelper;
 import util.Log;
 
@@ -24,6 +26,13 @@ public class Busverbindung {
 	private Normal n8uhr;
 	private Normal n10uhr;
 	private Normal n12uhr;
+	
+	private static int fuelle = 4;
+	
+	/*static {
+		Parameters p = RunEnvironment.getInstance().getParameters();
+		fuelle = (Integer)p.getValue("fuelle");
+	}*/
 	
 	public Busverbindung() {
 		this.studentenZuhause = new LinkedList<Student>();
@@ -47,7 +56,8 @@ public class Busverbindung {
 			case 0:
 				return 0;
 			case 1:
-				double lastfunktion = -(0.000002*Math.pow(tickcount-156.0, 4.0))+(0.014*Math.pow(tickcount-156.0, 2.0))+10;
+				double h = 0.01 + fuelle / 1000;
+				double lastfunktion = -(0.000002*Math.pow(tickcount-156.0, 4.0))+(h*Math.pow(tickcount-156.0, 2.0))+10;
 				if(lastfunktion < 0)
 					lastfunktion = 0;
 				return (int)lastfunktion;
@@ -166,19 +176,37 @@ public class Busverbindung {
 	
 	@ScheduledMethod(start = 1.3, interval = 1.0)
 	public void aussteigenUni() {
+		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount() % 288;
 		List<Student> studenten = new LinkedList<Student>(eins.aussteigen(true));
 		studenten.addAll(zwei.aussteigen(true));
-		for (Student student : studenten) {
-			// Studenten in Uni-Map einordnen mit verbleibender Uni Zeit
-			int uniZeit = 48; // 4 Stunden 
-			if (RandomHelper.nextIntFromTo(0, 1) > 0.5) {
-				uniZeit += 24; // insgesamt 6 Stunden
+		for (Student student : studenten) {			
+			int uniZeit = 24;
+			int maxVorlesungen = 0;
+			if (tickcount <= 96) { // 8 uhr
+				uniZeit += 96 - tickcount;
+				maxVorlesungen = 4;
+			} else if (tickcount <= 120) { // 10 uhr
+				uniZeit += 120 - tickcount;
+				maxVorlesungen = 3;
+			} else if (tickcount <= 144) { // 12 uhr
+				uniZeit += 144 - tickcount;
+				maxVorlesungen = 2;
+			} else if (tickcount <= 168) { // 14 uhr
+				uniZeit += 168 - tickcount;
+				maxVorlesungen = 1;
+			} else if (tickcount <= 192) { // später
+				uniZeit += 192 - tickcount;
+			} else {				
+				uniZeit = 0;
 			}
-			if (RandomHelper.nextIntFromTo(0, 1) > 0.5) {
-				uniZeit += 24; // insgesamt 8 Stunden
+			
+			
+			for (int i = 0; i < maxVorlesungen; i++) {
+				double p = 0.5;
+				if (RandomHelper.nextDoubleFromTo(0,1) < p) uniZeit += 24;
 			}
+			
 			studentenUni.put(student, uniZeit);
-			Log.info("Student kommt an Uni an");
 		}		
 	}
 	

@@ -22,6 +22,7 @@ public class OScillateBuilder implements ContextBuilder<Object> {
 		int soz_max = (Integer)p.getValue("soz_max");
 		int ersties = (Integer)p.getValue("ersties");
 		
+		
 		Busverbindung busv = new Busverbindung();		
 		
 		//network

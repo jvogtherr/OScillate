@@ -97,13 +97,7 @@ public class Student {
 		} else if (zweiKommt && (sozialfaktor >= zweiFuelle)) {
 			entscheidung = Buslinie.ZWEI;
 		}
-		
-		if (entscheidung == null) {
-			Log.warning("student weiß nicht was los ist");
-			Log.warning(einsFuelle+" "+zweiFuelle);
-		}
-		
-		Log.warning("Entscheidung: "+entscheidung);
+			
 
 		return entscheidung;
 	}
