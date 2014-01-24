@@ -24,6 +24,12 @@
 						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
 									
 		/>
+				<parameter name="fuelle" displayName="andere Fahrgaeste" type="int" 
+						defaultValue="4" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
 				<parameter name="ersties" displayName="Ersties" type="int" 
 						defaultValue="100" 
 						isReadOnly="false" 

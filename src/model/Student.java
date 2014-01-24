@@ -23,7 +23,7 @@ public class Student {
 		//initialentscheidung zufaellig
 		if(erstie){
 			this.bevorzugterBus = Buslinie.ZWEI;
-			this.punkteZwei = 10;
+			this.punkteZwei = 2;
 			this.punkteEins = 0;
 		} else if (RandomHelper.nextIntFromTo(0, 1) < 0.5) {
 			this.bevorzugterBus = Buslinie.EINS;
@@ -78,7 +78,8 @@ public class Student {
 		Buslinie entscheidung = null;
 		
 		//Hintergrundlast
-		einsFuelle = einsFuelle + Busverbindung.getFuelle(0);
+		einsFuelle = einsFuelle + Busverbindung.getFuelle(1);
+		zweiFuelle = zweiFuelle + Busverbindung.getFuelle(1);
 		
 		if(erstie){
 			if(zweiKommt && sozialfaktor > zweiFuelle)

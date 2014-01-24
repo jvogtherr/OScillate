@@ -52,12 +52,15 @@ public class Busverbindung {
 	public static int getFuelle(int id){
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		tickcount = tickcount % 288;
+		Parameters p = RunEnvironment.getInstance().getParameters();
+		fuelle = (Integer)p.getValue("fuelle");
+		if(fuelle == 0) return 0;
 		switch(id){
 			case 0:
 				return 0;
 			case 1:
-				double h = 0.01 + fuelle / 1000;
-				double lastfunktion = -(0.000002*Math.pow(tickcount-156.0, 4.0))+(h*Math.pow(tickcount-156.0, 2.0))+10;
+				double h = 0.01 + (double)fuelle / 1000.0;
+				double lastfunktion = -(0.000004*Math.pow(tickcount-144.0, 4.0))+(h*Math.pow(tickcount-144.0, 2.0))+10;
 				if(lastfunktion < 0)
 					lastfunktion = 0;
 				return (int)lastfunktion;
@@ -143,7 +146,7 @@ public class Busverbindung {
 	public void zuhauseNachNeumarkt() {		
 		for (int i = 0; i < this.studentenZuhause.size(); i++) {
 			Student student = this.studentenZuhause.get(i);			
-			if (student.getFahrtZurUni() && RandomHelper.nextDoubleFromTo(0, 1) < 0.3) { // TODO: Entscheidung: muss student zur uni?
+			if (student.getFahrtZurUni()) {
 				Log.info("neuer Student am Neumarkt");
 				student.setFahrtZurUni(true);
 				this.studentenNeumarkt.add(student);
@@ -157,6 +160,13 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (int i = 0; i < this.studentenNeumarkt.size(); i++) {
 			Student student = this.studentenNeumarkt.get(i);
+			//wenn zu spät, gehe wieder nach Hause
+			if(tickcount % 288 > 192){		
+				student.setFahrtZurUni(false);
+				this.studentenNeumarkt.remove(i);
+				this.studentenZuhause.add(student);
+				continue;
+			}
 			boolean einsKommt = tickcount % 2 == 0;
 			boolean zweiKommt = tickcount % 3 == 0;			
 			if (einsKommt || zweiKommt) {
