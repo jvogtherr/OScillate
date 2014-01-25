@@ -6,28 +6,32 @@ OScillate
 ##Leitfrage 
 Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Faktoren haben darauf Einfluss?
 
+---
+
 ##Modellierung
-
-###Agent: Student
-Eigenschaften:
-* bevorzugter Bus (welchen Bus mag ich liebe?)
-* Startzeit (wann muss ich zur Uni fahren?)
-* Sozialfaktor (vermeide ich zu volle Busse?)
-* Erstie (kenne ich die 11?)
-
-###Umwelt: Busverbindung
-* modelliert die Aufenthaltsorte der Studenten (Zuhause, Neumarkt, Uni)
-* Manager für den Busverkehr
-* updated regelmäßig den Status der Simulation (Scheduled Methods)
-* wird als einzige Klasse dem Context hinzugefügt, liefert Daten für die Data Sets
-
-###Bus
-* eine Instanz modelliert eine Buslinie mit allen Bussen, die darauf fahren
-* merkt sich die Fahrtrichtung der Studenten und die verbleibende Fahrzeit
 
 ###Allgemeines
 * 1 Tick = 5 Minuten, 288 Ticks = 1 Tag
+* UOS hat insgesamt ca. 12000 Studierende => 4000-8000 Studenten für die Simulation (Batch-Runs?)
 
+####Agent: Student
+* Eigenschaften:
+	* bevorzugter Bus (welchen Bus mag ich lieber?)
+	* Startzeit (wann muss ich zur Uni fahren?)
+	* Sozialfaktor (vermeide ich zu volle Busse?)
+	* Erstie (kenne ich die 11?)
+
+####Umwelt: Busverbindung
+* modelliert die Aufenthaltsorte der Studenten (Zuhause, Neumarkt, Uni)
+* Managerklasse für den Busverkehr
+* updated regelmäßig den Status der Simulation (Scheduled Methods)
+* wird als einzige Klasse dem Context hinzugefügt, liefert Daten für die Data Sets
+
+####Bus
+* eine Instanz modelliert eine Buslinie mit allen Bussen, die darauf fahren
+* merkt sich die Fahrtrichtung der Studenten und die verbleibende Fahrzeit
+
+---
 
 ##Diagramme
 * __(Diagramm)__
@@ -62,14 +66,17 @@ Eigenschaften:
 		* entweder zu feste Regeln (11 wird künstlich bevorzugt)
 		* oder realistisch aufgrund der kürzeren Fahrzeit und dem daraus folgenden höheren Durchsatz
 
+---
 
-##Notizen
-1 Tag = 288 Ticks
-25% der Studenten fahren gleichverteilt um 8, 50% um 10 und der Rest um 12 los
-Ein Student bleibt 4 (25%), meistens aber 6 (50%), vielleicht auch 8 Stunden (25%) in der Uni
-der Plan hierbei ist:
-nach obiger Entscheidung schaue, welcher Zeitpunkt (144, 168, 192, 216 oder 240) am nahesten bei 'jetzt + entschiedene Aufenthaltsdauer' liegt und setzte uniZeit auf 'bester passender endzeitpunkt - jetzt'
-Problem dabei ist: uniZeit muss folglich auch am Neumarkt und im Bus runtergezählt werden...
+##Erste Ergebnisse
+* Simulation funktioniert gut, ist jedoch sehr statisch
+	* ändert die Dynamik über mehrere Tage nicht
+	* nur kleine Unterschiede durch die Zufallsentscheidungen
+* starker Abstraktionsgrad
+	* nimmt Genauigkeit
+	* bietet interessante Möglichkeiten zur Auswertung	
 
-eins = 11 faehrt 2 ticks = 10 Minuten
-zwei = 21 faehrt 3 ticks = 15 Minuten
+---
+
+##Aussicht für die Abgabe
+* ...
