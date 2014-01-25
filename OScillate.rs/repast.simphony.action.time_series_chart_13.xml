@@ -1,9 +1,9 @@
 <repast.simphony.chart2.engine.TimeSeriesChartDescriptor>
-  <name>Busse Rueckweg</name>
-  <dataSet>Busse Rueckweg</dataSet>
+  <name>Busse Hinweg</name>
+  <dataSet>Busse Hinweg</dataSet>
   <xAxisLabel>Tick Count</xAxisLabel>
   <yAxisLabel>Anzahl Studenten in Buslinie</yAxisLabel>
-  <chartTitle>Busse Rueckweg</chartTitle>
+  <chartTitle>Busse Hinweg</chartTitle>
   <type>TIME_SERIES</type>
   <background>
     <red>192</red>
@@ -21,9 +21,9 @@
   <showLegend>true</showLegend>
   <seriesIds>
     <entry>
-      <string>11 U-&gt;N</string>
+      <string>11 N-&gt;U</string>
       <SeriesData>
-        <label>11 U-&gt;N</label>
+        <label>11 N-&gt;U</label>
         <color>
           <red>0</red>
           <green>0</green>
@@ -33,9 +33,9 @@
       </SeriesData>
     </entry>
     <entry>
-      <string>21 U-&gt;N</string>
+      <string>21 N-&gt;U</string>
       <SeriesData>
-        <label>21 U-&gt;N</label>
+        <label>21 N-&gt;U</label>
         <color>
           <red>255</red>
           <green>0</green>

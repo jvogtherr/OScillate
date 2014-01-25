@@ -134,4 +134,19 @@ public class Student {
 		return trendZwei;
 	}
 	
+	public int getBevBusEins() {
+		Log.warning(this.bevorzugterBus);
+		if(this.bevorzugterBus == Buslinie.EINS)
+			return 1;
+		else
+			return 0;
+	}
+	
+	public int getBevBusZwei(){
+		if(this.bevorzugterBus == Buslinie.ZWEI)
+			return 1;
+		else
+			return 0;
+	}
+	
 }

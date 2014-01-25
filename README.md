@@ -65,17 +65,31 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 	* keine Dynamik
 		* entweder zu feste Regeln (11 wird künstlich bevorzugt)
 		* oder realistisch aufgrund der kürzeren Fahrzeit und dem daraus folgenden höheren Durchsatz
+	* Probleme der Grafik: resettet nicht bei Projektreset, weil statisch
+	* Graph gut, aber was ich zus�tzlich wollte ist 'Anzahl an Studenten deren Bevorzugter Bus momentan die Eins ist' Graph, um eingebaute dynamik Sichtbar zu machen
 
 
 
 ##Erste Ergebnisse
 * Simulation funktioniert gut, ist jedoch sehr statisch
-	* ändert die Dynamik über mehrere Tage nicht
-	* nur kleine Unterschiede durch die Zufallsentscheidungen
-* starker Abstraktionsgrad
+	* ändert die Dynamik über mehrere Tage nicht (nur, weil wir das Modell in einem 'stabilen Zustand' starten lassen)
+	* nur kleine Unterschiede durch die Zufallsentscheidungen (Man kann Bar-Modell in Busbelegung erahnen)
+* starker Abstraktionsgrad (ist nicht eher das Gegenteil der Fall?)
 	* nimmt Genauigkeit
 	* bietet interessante Möglichkeiten zur Auswertung	
 
+
+##Szenarien
+* nur Ersties
+	* Dynamik �ber Tage erkennbar, 11 wird langsam immer beliebter.
+* viele Studenten & viele sonstige Fahrgaeste (10.000, bei Buskapazitaet 100 und andere Fahrgaeste 20)
+	* Busse schaffen es nicht mehr alle Studenten zu befoerdern. Zum naechsten Peak sind immernoch Studenten vom Vorhergehenden am Neumarkt
+	* gleiches gilt fuer R�ckweg
+	* Es gibt Studenten die garnicht erst in die Uni fahren
+	* An den Busgraphen kann man die umgekehrte Lastfunktion erkennen (Busse Gesamt sieht allerdings nicht so schoen aus)
+* niedriger moeglicher Sozialfaktor vs. keinem
+	* Hat keine unmittelbare Auswirkung auf Graphen
+	* Wirkt vermutlich nur auf Dynamik der Wahl des bevorzugten Busses -> Oszillation wie bei Bar-Modell (fehlt Beweis, siehe "Busse Trends")
 
 
 ##Aussicht für die Abgabe
