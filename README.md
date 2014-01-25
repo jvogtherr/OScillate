@@ -30,31 +30,32 @@ Eigenschaften:
 
 
 ##Diagramme
-* (Diagramm)
+* __(Diagramm)__
 	* (was ist zu erkennen)
-* Studenten Zuhause/Uni
+* __Studenten Zuhause/Uni__
 	* Stoßzeiten
 	* Hin- und Rückfahrtzeitpunkte
 	* Aufenthaltsdauer
 	* Vorlesungsende
-* Studenten Uni Hinweg
+* __Studenten Uni Hinweg__
 	* Normalverteilung um die Stoßzeiten 
 		* wenige kommen zu früh an
 		* viele kommen zum richtigen Zeitpunkt an
 		* wenige kommen zu spät an
-* Busse Hinweg
+* __Busse Hinweg__
 	* Abfahrtszeiten der Buslinien
 	* Bevorzugung der 11
 		* dennoch sind die absoluten Fahrgastzahlen sehr ähnlich
-* Studenten Uni Rueckweg
+* __Studenten Uni Rueckweg__
 	* die ersten fahren nach Hause, wenn die letzten kommen (=> Aufenthaltsdauer)
 	* Peaks an den Haltestellen zu Vorlesungsende (Bus-Kapazitäten erschöpft?)
-* Busse Rueckweg
+* __Busse Rueckweg__
 	* Abfahrtszeiten der Buslinien
 	* sehr starke Bevorzugung der 11
 		* absolute Fahrgastzahlen werden unterschiedlicher, 21 verliert Beliebtheit
-* Busse Gesamt
-* Busse Trends
+* __Busse Gesamt__
+	* Mischung aus Busse Hinweg + Busse Rueckweg
+* __Busse Trends__
 	* 11 ist deutlich beliebter
 	* zwei Graden mit unterschiedlicher Steigung, 21 steigt sehr langsam
 	* keine Dynamik
