@@ -30,14 +30,36 @@ Eigenschaften:
 
 
 ##Diagramme
+* (Diagramm)
+	* (was ist zu erkennen)
 * Studenten Zuhause/Uni
-	-> zu erkennen: Stoßzeiten, Hin- und Rückfahrtzeitpunkte, Aufenthaltsdauer, Vorlesungsende
+	* Stoßzeiten
+	* Hin- und Rückfahrtzeitpunkte
+	* Aufenthaltsdauer
+	* Vorlesungsende
 * Studenten Uni Hinweg
+	* Normalverteilung um die Stoßzeiten 
+		* wenige kommen zu früh an
+		* viele kommen zum richtigen Zeitpunkt an
+		* wenige kommen zu spät an
 * Busse Hinweg
+	* Abfahrtszeiten der Buslinien
+	* Bevorzugung der 11
+		* dennoch sind die absoluten Fahrgastzahlen sehr ähnlich
 * Studenten Uni Rueckweg
+	* die ersten fahren nach Hause, wenn die letzten kommen (=> Aufenthaltsdauer)
+	* Peaks an den Haltestellen zu Vorlesungsende (Bus-Kapazitäten erschöpft?)
 * Busse Rueckweg
+	* Abfahrtszeiten der Buslinien
+	* sehr starke Bevorzugung der 11
+		* absolute Fahrgastzahlen werden unterschiedlicher, 21 verliert Beliebtheit
 * Busse Gesamt
 * Busse Trends
+	* 11 ist deutlich beliebter
+	* zwei Graden mit unterschiedlicher Steigung, 21 steigt sehr langsam
+	* keine Dynamik
+		* entweder zu feste Regeln (11 wird künstlich bevorzugt)
+		* oder realistisch aufgrund der kürzeren Fahrzeit und dem daraus folgenden höheren Durchsatz
 
 
 ##Notizen
@@ -49,5 +71,4 @@ nach obiger Entscheidung schaue, welcher Zeitpunkt (144, 168, 192, 216 oder 240)
 Problem dabei ist: uniZeit muss folglich auch am Neumarkt und im Bus runtergezählt werden...
 
 eins = 11 faehrt 2 ticks = 10 Minuten
-
 zwei = 21 faehrt 3 ticks = 15 Minuten
