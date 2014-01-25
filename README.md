@@ -10,7 +10,7 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 
 ##Modellierung
 
-###Allgemeines
+####Allgemeines
 * 1 Tick = 5 Minuten, 288 Ticks = 1 Tag
 * UOS hat insgesamt ca. 12000 Studierende => 4000-8000 Studenten für die Simulation (Batch-Runs?)
 
@@ -31,7 +31,7 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 * eine Instanz modelliert eine Buslinie mit allen Bussen, die darauf fahren
 * merkt sich die Fahrtrichtung der Studenten und die verbleibende Fahrzeit
 
----
+
 
 ##Diagramme
 * __(Diagramm)__
@@ -66,7 +66,7 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 		* entweder zu feste Regeln (11 wird künstlich bevorzugt)
 		* oder realistisch aufgrund der kürzeren Fahrzeit und dem daraus folgenden höheren Durchsatz
 
----
+
 
 ##Erste Ergebnisse
 * Simulation funktioniert gut, ist jedoch sehr statisch
@@ -76,7 +76,7 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 	* nimmt Genauigkeit
 	* bietet interessante Möglichkeiten zur Auswertung	
 
----
+
 
 ##Aussicht für die Abgabe
 * ...
