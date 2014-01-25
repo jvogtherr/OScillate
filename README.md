@@ -8,17 +8,36 @@ Wann entscheidet sich ein Student für die 11 und wann für die 21 und welche Fa
 
 ##Modellierung
 
-####Agent: Student
+###Agent: Student
+Eigenschaften:
+* bevorzugter Bus (welchen Bus mag ich liebe?)
+* Startzeit (wann muss ich zur Uni fahren?)
+* Sozialfaktor (vermeide ich zu volle Busse?)
+* Erstie (kenne ich die 11?)
 
-    Student[heterogene Eigenschaften](
-	bevorzugterBus
-        Sozialfaktor
-        Erstie
-        uniZeit
-        losgehzeit
-        punkteEins (Meinung zu jeweiligem Bus)
-        punkteZwei (maximum der beiden bestimmt bevorzugterBus)
-    )
+###Umwelt: Busverbindung
+* modelliert die Aufenthaltsorte der Studenten (Zuhause, Neumarkt, Uni)
+* Manager für den Busverkehr
+* updated regelmäßig den Status der Simulation (Scheduled Methods)
+* wird als einzige Klasse dem Context hinzugefügt, liefert Daten für die Data Sets
+
+###Bus
+* eine Instanz modelliert eine Buslinie mit allen Bussen, die darauf fahren
+* merkt sich die Fahrtrichtung der Studenten und die verbleibende Fahrzeit
+
+###Allgemeines
+* 1 Tick = 5 Minuten, 288 Ticks = 1 Tag
+
+
+##Diagramme
+* Studenten Zuhause/Uni
+	-> zu erkennen: Stoßzeiten, Hin- und Rückfahrtzeitpunkte, Aufenthaltsdauer, Vorlesungsende
+* Studenten Uni Hinweg
+* Busse Hinweg
+* Studenten Uni Rueckweg
+* Busse Rueckweg
+* Busse Gesamt
+* Busse Trends
 
 
 ##Notizen
@@ -29,19 +48,6 @@ der Plan hierbei ist:
 nach obiger Entscheidung schaue, welcher Zeitpunkt (144, 168, 192, 216 oder 240) am nahesten bei 'jetzt + entschiedene Aufenthaltsdauer' liegt und setzte uniZeit auf 'bester passender endzeitpunkt - jetzt'
 Problem dabei ist: uniZeit muss folglich auch am Neumarkt und im Bus runtergezählt werden...
 
-eins = 11 f�hrt 2 ticks = 10 Minuten
+eins = 11 faehrt 2 ticks = 10 Minuten
 
-zwei = 21 f�hrt 3 ticks = 15 Minuten
-
-
-###TODO
-* Graphen fuer bevorzugterBus in Student (habe ich nicht hinbekommen)
-* Entscheidung "wie lange bleibe ich" muss umgebaut werden in "wann fahre ich nach hause" mit festen Zeiten ab 12 bis 20 uhr alle 2 Stunden und muss schon stattfinden in 'geheZuNeumarkt'
-
-###Ideen:
-* soziales Netzwerk korrelliert mit sozialfaktor
-
-###Diagramme
-* Wieviele Fahrgäste hatten die Linien insgesamt? (stetig steigender Zeitgraph)
-* wieviele Studenten bevorzugen welchen Bus? (Histogramm?)
-
+zwei = 21 faehrt 3 ticks = 15 Minuten

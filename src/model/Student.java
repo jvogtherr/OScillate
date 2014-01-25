@@ -18,6 +18,9 @@ public class Student {
 	private int punkteZwei;
 	private boolean erstie;
 	
+	public static int trendEins = 0;
+	public static int trendZwei = 0;
+	
 	public Student(int soz_min, int soz_max, boolean erstie) {
 		
 		//initialentscheidung zufaellig
@@ -99,7 +102,12 @@ public class Student {
 			entscheidung = Buslinie.ZWEI;
 		}
 			
-
+		if (entscheidung == Buslinie.EINS){
+			trendEins++;
+		} else if (entscheidung == Buslinie.ZWEI){
+			trendZwei++;
+		}
+		
 		return entscheidung;
 	}
 	
@@ -117,4 +125,13 @@ public class Student {
 				erstie = false;
 		}
 	}
+	
+	public static int getTrendEins() {
+		return trendEins;
+	}
+	
+	public static int getTrendZwei() {
+		return trendZwei;
+	}
+	
 }

@@ -100,29 +100,9 @@ public class Busverbindung {
 	public void schlafen() {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (Student student : this.studentenZuhause) {
-			
-// Rush hour variante: Drei Sto�zeiten
-//			//8 uhr: 25% der Studenten fahren los
-//			if(tickcount % 288 == 96){
-//				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.33){
-//					student.setFahrtZurUni(true);
-//					Log.info("Student fährt wieder los");
-//				}
-//			//10 uhr: ca 50% der Studenten fahren los
-//			} else if(tickcount % 288 == 120){ 
-//				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.33){
-//					student.setFahrtZurUni(true);
-//					Log.info("Student fährt wieder los");
-//				}
-//			//12 uhr: der Rest
-//			} else if(tickcount % 288 == 144){ 
-//				student.setFahrtZurUni(true);
-//				Log.info("Student fährt wieder los");
-//			}		
-			
-// Realistische Variante: Ankunftszeiten an Neumarkt sind Normalverteilt
-// Beispiel 8 Uhr: Schnellster Student ist um 7:35 am Neumarkt, 
-// der Langsamste um 8:25
+			// Realistische Variante: Ankunftszeiten an Neumarkt sind Normalverteilt
+			// Beispiel 8 Uhr: Schnellster Student ist um 7:35 am Neumarkt, 
+			// der Langsamste um 8:25
 			if(90 == tickcount % 288) {	
 				if(RandomHelper.nextDoubleFromTo(0, 1) > 0.75){
 					student.setLosgehzeit(n8uhr.nextInt());
@@ -160,7 +140,7 @@ public class Busverbindung {
 		int tickcount = (int) RunEnvironment.getInstance().getCurrentSchedule().getTickCount();
 		for (int i = 0; i < this.studentenNeumarkt.size(); i++) {
 			Student student = this.studentenNeumarkt.get(i);
-			//wenn zu sp�t, gehe wieder nach Hause
+			//wenn zu sp�t, gehe wieder nach Hause
 			if(tickcount % 288 > 192){		
 				student.setFahrtZurUni(false);
 				this.studentenNeumarkt.remove(i);
@@ -215,6 +195,8 @@ public class Busverbindung {
 				double p = 0.5;
 				if (RandomHelper.nextDoubleFromTo(0,1) < p) uniZeit += 24;
 			}
+			
+			uniZeit += RandomHelper.nextIntFromTo(0, 5); // etwas mehr unregelmäßigkeit
 			
 			studentenUni.put(student, uniZeit);
 		}		
@@ -307,5 +289,25 @@ public class Busverbindung {
 	public int getUniZuNeumarktGesamt() {
 		return this.eins.getUniZuNeumarkt() + this.zwei.getUniZuNeumarkt();
 	}
+	
+	public int getBusGesamt() {
+		return getNeumarktZuUniGesamt() + getUniZuNeumarktGesamt() + getStudentenNeumarkt() + getStudentenUnihaltestelle();
+	}
+	
+	public int getEinsGesamt() {
+		return this.eins.getNeumarktZuUni() + this.eins.getUniZuNeumarkt();
+	}
+	
+	public int getZweiGesamt() {
+		return this.zwei.getNeumarktZuUni() + this.zwei.getUniZuNeumarkt();
+	}
 		
+	public int getTrendEins() {
+		return Student.getTrendEins();
+	}
+	
+	public int getTrendZwei() {
+		return Student.getTrendZwei();
+	}
+	
 }

@@ -1,5 +1,5 @@
 <repast.simphony.data2.engine.DataSetDescriptor>
-  <name>Lastfunktion</name>
+  <name>Busse Gesamt</name>
   <type>AGGREGATE</type>
   <inclTick>true</inclTick>
   <inclBatchRun>false</inclBatchRun>
@@ -11,16 +11,25 @@
     <pType>LAST</pType>
     <duration>-1.0</duration>
     <frequency>REPEAT</frequency>
-    <hashCode>1343204653</hashCode>
+    <hashCode>1992882789</hashCode>
   </scheduleParams>
   <atEnd>false</atEnd>
   <methodDataSources class="linked-hash-map">
     <entry>
-      <string>fuelle</string>
+      <string>11</string>
       <repast.simphony.data2.engine.MethodDataSourceDefinition>
-        <id>fuelle</id>
+        <id>11</id>
         <className>OScillate.Busverbindung</className>
-        <methodName>getUnstaticFuelle</methodName>
+        <methodName>getEinsGesamt</methodName>
+        <aggType>SUM</aggType>
+      </repast.simphony.data2.engine.MethodDataSourceDefinition>
+    </entry>
+    <entry>
+      <string>21</string>
+      <repast.simphony.data2.engine.MethodDataSourceDefinition>
+        <id>21</id>
+        <className>OScillate.Busverbindung</className>
+        <methodName>getZweiGesamt</methodName>
         <aggType>SUM</aggType>
       </repast.simphony.data2.engine.MethodDataSourceDefinition>
     </entry>
