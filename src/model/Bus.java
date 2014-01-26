@@ -35,10 +35,17 @@ public class Bus {
 	}
 	
 	public List<Student> aussteigen(boolean uni) {		
+		int anzahl_mitfahrende = 0;
+		for (Student student : this.map.keySet()) {
+			if(this.map.get(student) <= 0 && student.getFahrtZurUni() == uni) 
+				anzahl_mitfahrende++;
+		}
+		
 		for (Student student : this.map.keySet()) {
 			if(this.map.get(student) <= 0 && student.getFahrtZurUni() == uni) {
 				//reflektiere Entscheidung
-				if(this.map.keySet().size() > student.getSozialfaktor() + 50){
+				Log.warning(anzahl_mitfahrende);
+				if(anzahl_mitfahrende > student.getSozialfaktor()){
 					if(this.linie == Buslinie.EINS){
 						student.updateBevorzugterBus(-1, 0);
 					} else {
