@@ -149,4 +149,9 @@ public class Student {
 			return 0;
 	}
 	
+	public static void initTrends() {
+		trendEins = 0;
+		trendZwei = 0;
+	}
+	
 }

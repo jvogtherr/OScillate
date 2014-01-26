@@ -33,6 +33,7 @@ public class OScillateBuilder implements ContextBuilder<Object> {
 		}		
 		
 		context.add(busv);
+		Student.initTrends();
 		
 		Log.info("context initialized");
 		return context;

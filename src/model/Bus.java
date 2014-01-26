@@ -97,4 +97,8 @@ public class Bus {
 		return result;
 	}
 	
+	public Set<Student> getStudenten() {
+		return map.keySet();
+	}
+	
 }

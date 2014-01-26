@@ -310,4 +310,32 @@ public class Busverbindung {
 		return Student.getTrendZwei();
 	}
 	
+	
+	private List<Student> getStudenten() {
+		List<Student> studenten = new LinkedList<Student>();
+		studenten.addAll(studentenZuhause);
+		studenten.addAll(studentenNeumarkt);
+		studenten.addAll(studentenUnihaltestelle);
+		studenten.addAll(studentenUni.keySet());
+		studenten.addAll(eins.getStudenten());
+		studenten.addAll(zwei.getStudenten());
+		return studenten;
+	}
+	
+	public int getStudentenBevorzugterBusEins() {
+		int result = 0;
+		for (Student student : getStudenten()) {
+			if (student.getBevorzugterBus() == Buslinie.EINS) result++;
+		}
+		return result;
+	}
+	
+	public int getStudentenBevorzugterBusZwei() {
+		int result = 0;
+		for (Student student : getStudenten()) {
+			if (student.getBevorzugterBus() == Buslinie.ZWEI) result++;
+		}
+		return result;
+	}
+	
 }
