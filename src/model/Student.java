@@ -112,9 +112,19 @@ public class Student {
 	}
 	
 	public void updateBevorzugterBus(int valueEins, int valueZwei){
-		//Log.info("UPDATE: " + punkteEins + " + " + valueEins + "; " + punkteZwei + " + " + valueZwei);
+		//Log.warning("UPDATE: " + punkteEins + " + " + valueEins + "; " + punkteZwei + " + " + valueZwei);
 		punkteEins += valueEins;
 		punkteZwei += valueZwei;
+		//grenzwert
+		int g = 5;
+		if(punkteEins > g)
+			punkteEins = g;
+		if(punkteEins < -g)
+			punkteEins = -g;
+		if(punkteZwei > g)
+			punkteZwei = g;
+		if(punkteZwei < -g)
+			punkteZwei = -g;
 		Buslinie previous = bevorzugterBus;
 		if(punkteEins == punkteZwei); //wechsle nur wenn eine Punktzahl groesser!
 		else

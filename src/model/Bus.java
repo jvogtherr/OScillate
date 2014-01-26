@@ -44,7 +44,6 @@ public class Bus {
 		for (Student student : this.map.keySet()) {
 			if(this.map.get(student) <= 0 && student.getFahrtZurUni() == uni) {
 				//reflektiere Entscheidung
-				Log.warning(anzahl_mitfahrende);
 				if(anzahl_mitfahrende > student.getSozialfaktor()){
 					if(this.linie == Buslinie.EINS){
 						student.updateBevorzugterBus(-1, 0);
