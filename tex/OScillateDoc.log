@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.19)  19 FEB 2014 13:14
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.19)  22 FEB 2014 15:01
 entering extended mode
 **OScillateDoc.tex
-(D:\Projekte\workspace\OScillate\docs\OScillateDoc.tex
+(D:\Projekte\workspace\OScillate\tex\OScillateDoc.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -479,7 +479,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(D:\Projekte\workspace\OScillate\docs\OScillateDoc.aux)
+(D:\Projekte\workspace\OScillate\tex\OScillateDoc.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -552,8 +552,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Projekte/workspace/OSc
-illate/docs/unilogo.pdf>]
-(D:\Projekte\workspace\OScillate\docs\OScillateDoc.toc)
+illate/tex/unilogo.pdf>]
+(D:\Projekte\workspace\OScillate\tex\OScillateDoc.toc)
 \tf@toc=\write3
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 36.
@@ -562,22 +562,23 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 36.
  [2] [3]
-(D:\Projekte\workspace\OScillate\docs\OScillateDoc.aux) ) 
+(D:\Projekte\workspace\OScillate\tex\OScillateDoc.aux) ) 
 Here is how much of TeX's memory you used:
- 4097 strings out of 493921
- 55483 string characters out of 3150481
- 135930 words of memory out of 3000000
- 7324 multiletter control sequences out of 15000+200000
+ 4101 strings out of 493921
+ 55500 string characters out of 3150481
+ 139962 words of memory out of 3000000
+ 7328 multiletter control sequences out of 15000+200000
  49423 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,10n,47p,265b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Programme/MiKTeX/f
-onts/enc/dvips/lm/lm-ec.enc}<D:/Programme/MiKTeX/fonts/type1/public/lm/lmr17.pf
-b><D:/Programme/MiKTeX/fonts/type1/public/lm/lmss10.pfb><D:/Programme/MiKTeX/fo
-nts/type1/public/lm/lmssbx10.pfb>
-Output written on OScillateDoc.pdf (3 pages, 84627 bytes).
+ 38i,10n,47p,853b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Programme/MiKTeX/fo
+nts/enc/dvips/lm/lm-ec.enc}<D:/Programme/MiKTeX/fonts/type1/public/lm/lmr12.pfb
+><D:/Programme/MiKTeX/fonts/type1/public/lm/lmr17.pfb><D:/Programme/MiKTeX/font
+s/type1/public/lm/lmss10.pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmssbx1
+0.pfb>
+Output written on OScillateDoc.pdf (3 pages, 119775 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
+ 32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

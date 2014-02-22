@@ -1,5 +1,6 @@
 \select@language {ngerman}
 \contentsline {section}{\numberline {1}Motivation}{3}
-\contentsline {section}{\numberline {2}Implementation}{3}
-\contentsline {section}{\numberline {3}Auswertung}{3}
-\contentsline {section}{\numberline {4}Fazit}{3}
+\contentsline {section}{\numberline {2}Design}{3}
+\contentsline {section}{\numberline {3}Implementation}{3}
+\contentsline {section}{\numberline {4}Auswertung}{3}
+\contentsline {section}{\numberline {5}Fazit}{3}
