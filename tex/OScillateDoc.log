@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.19)  23 FEB 2014 18:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.19)  23 FEB 2014 19:24
 entering extended mode
 **OScillateDoc.tex
 (D:\Projekte\workspace\OScillate\tex\OScillateDoc.tex
@@ -565,21 +565,21 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [2] [3] [4] [5] [6]
 (D:\Projekte\workspace\OScillate\tex\OScillateDoc.aux) ) 
 Here is how much of TeX's memory you used:
- 4109 strings out of 493921
- 55588 string characters out of 3150481
- 142992 words of memory out of 3000000
- 7336 multiletter control sequences out of 15000+200000
- 52191 words of font info for 44 fonts, out of 3000000 for 9000
+ 4107 strings out of 493921
+ 55560 string characters out of 3150481
+ 141992 words of memory out of 3000000
+ 7333 multiletter control sequences out of 15000+200000
+ 56453 words of font info for 45 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,10n,47p,1184b,263s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,10n,47p,1173b,263s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Programme/MiKTeX/fo
 nts/enc/dvips/lm/lm-ec.enc}<D:/Programme/MiKTeX/fonts/type1/public/lm/lmr12.pfb
 ><D:/Programme/MiKTeX/fonts/type1/public/lm/lmr17.pfb><D:/Programme/MiKTeX/font
-s/type1/public/lm/lmss10.pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmssbx1
-0.pfb>
-Output written on OScillateDoc.pdf (6 pages, 133140 bytes).
+s/type1/public/lm/lmri12.pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmss10.
+pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
+Output written on OScillateDoc.pdf (6 pages, 151103 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
