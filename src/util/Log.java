@@ -1,7 +1,10 @@
 package util;
 
+/**
+ * Logger class
+ */
 public class Log {
-
+	
 	class LogLevel {
 		static final int NONE = 0;
 		static final int ERROR = 1;
@@ -15,8 +18,6 @@ public class Log {
 	private static boolean enabled;
 	private static int level;
 	
-	
-	/***** customize: *****/
 	static {
 		// enable logging:
 		enabled = true;
@@ -24,7 +25,6 @@ public class Log {
 		// set log level:
 		level = 2;		
 	}
-	/**********************/
 	
 	public static void error(Object o) {
 		if (level >= LogLevel.ERROR) log(o);	

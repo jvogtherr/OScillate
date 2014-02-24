@@ -7,8 +7,16 @@ import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.parameter.Parameters;
 import util.Log;
 
+/**
+ * Hauptklasse der Simulation
+ */
 public class OScillateBuilder implements ContextBuilder<Object> {
-
+	
+	/** 
+	 * Liest zunächst die Parameter aus und erstellt damit die Busverbindung und Studenten.
+	 * Alle erstellten Objekte werden dem Context zugewiesen. 
+	 *  
+	 */
 	@Override
 	public Context<Object> build(Context<Object> context) {
 		Log.info("building context ...");
