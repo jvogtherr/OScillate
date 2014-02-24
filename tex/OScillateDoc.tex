@@ -36,27 +36,23 @@ Wintersemester 2013/2014 \\
 \newpage
 
 \section{Motivation}
-Als Student an der Universität Osnabrück bzw. der Hochschule steht man täglich vor einer schwierigen Entscheidung, wenn man den Kampus am Westerberg erreichen möchte. Der Weg dorthin beinhaltet nämlich für viele eine Busfahrt vom zentralen Verkehrsknotenpunkt, dem Neumarkt, zum Zielort, wobei es dort zwei verschiedene Linien gibt, die jeweils eigene Vor- und Nachteile mit sich bringen. Die Buslinie 21 fährt einen kleinen Umweg, sodass sie langsamer ist, als die konkurrierende Buslinie 11. Außerdem fährt die 11 mit einem 10-Minuten Takt häufiger als die 21. Allerdings hält die 11 nicht direkt an der Haltestelle vor der Uni, sondern zieht immer einen Fußweg von maximal fünf Minuten mit sich. Die zu Beginn angesprochene Entscheidung ist also nun: \glqq Fahre ich heute mit der 11, oder der 21?\grqq
+Als Student der Universität oder Hochschule in Osnabrück steht man täglich vor einer schwierigen Entscheidung, wenn man den Campus am Westerberg erreichen möchte. Der Weg dorthin beinhaltet für viele Studenten eine Busfahrt vom zentralen Verkehrsknotenpunkt, dem Neumarkt, zum Zielort, wobei es dort zwei verschiedene Buslinien gibt, die jeweils Vor- und Nachteile mit sich bringen. Die Buslinie 21 fährt einen kleinen Umweg, sodass sie langsamer ist, als die konkurrierende Buslinie 11. Außerdem fährt die 21 mit einem 15-Minuten Takt weniger oft als die 11 mit einem 10-Minuten Takt. Allerdings hält die 11 nicht direkt an der Haltestelle vor der Uni, sondern zieht immer einen Fußweg von bis zu fünf Minuten mit sich. Die zu Beginn angesprochene Entscheidung ist also nun: \glqq Fahre ich heute mit der 11, oder der 21?\grqq
 
-Das im folgende vorgestellte Projekt OScillate beschäftigt sich  mit ebendieser Problematik. Im Rahmen der Veranstaltung \glqq Regelbasierte Modellierung\grqq  wurde ein agentenbasiertes Modell erstellt, das die Entscheidungsdynamik %bessere Formulierung?
-zwischen den konkurrierenden Buslinien 11 und 21 über einen annähernd normalen Tagesablauf, dh. über die Zeit, nachstellen soll.
+Das im folgende vorgestellte Projekt OScillate beschäftigt sich mit ebendieser Problematik. Im Rahmen der Veranstaltung \glqq Regelbasierte Modellierung\grqq wurde ein agentenbasiertes Modell erstellt, das die Entscheidungsdynamik dieser Fragestellung nachstellen soll.
 
 In Abschnitt~\ref{design} werden zunächst grundlegende Designentscheidungen erläutert. Darauf basierend geht es in Abschnitt~\ref{impl} um die Umsetzung der Ideen, direkt gefolgt von einer Auswertung der daraus resultierenden Ergebnisse in Abschnitt~\ref{erg}. Abschließend diskutiert Abschnitt~\ref{fazit} den Verlauf des Projektes, sowie die erhaltenen Ergebnisse.
 
 \section{Design}\label{design}
-Das Ziel des Modelles sind von explorativer Natur und lässt sich in folgender Leitfrage zusammenfassen: \glqq Welche Faktoren haben einen Einfluss auf die Wahl der Buslinie?\grqq 
+Der Modellzweck ist explorativ und lässt sich in folgender Leitfrage zusammenfassen: \glqq Welche Faktoren haben einen Einfluss auf die Wahl der Buslinie?\grqq 
 
-Da das Modell, um die Busfahrzeiten und Tagesabläufe eines Studenten darstellen zu können,  eine sehr hohe zeitliche Auflösung mit sich bringt, kann der Abstraktionsgrad als realistisch eingestuft werden. Die komplexe Entscheidung der homogenen Agenten, der Studenten, trägt ebenfalls dazu bei und führt zu einer hohen individuellen Komplexität. Funktionale Heterogenität gibt es in direktem Sinne nicht, weil es außer den Studenten keine weiteren Akteure gibt. Eine Interaktion zwischen Agenten ist ebenfalls minimal, denn einen direkten Austausch von Erfahrungen oder Ähnlichem zwischen den Studenten gibt es nicht.
+Das Modell ist insgesamt sehr auf die Situation der realen Welt zugeschnitten und lässt sich kaum auf andere Situationen übertragen. Außerdem verwendet das Modell sowohl eine sehr hohe zeitliche, als auch räumliche Auflösung, daher kann der Abstraktionsgrad als realistisch eingestuft werden. Die komplexe Entscheidung der homogenen Agenten, der Studenten, trägt ebenfalls dazu bei und führt zu einer hohen individuellen Komplexität. Funktionale Heterogenität gibt es in direktem Sinne nicht, weil es außer den Studenten keine weiteren Akteure gibt. Die Interaktionen der Studenten untereinander beschränken sich auf simple Beobachtung der Handlungen der anderen Akteure, echte Interaktionen gibt es nicht.
 
 \section{Implementierung}\label{impl}
 Die zentralen Elemente des Modells sind Studenten als Agenten des Systems und die Busverbindung, die die Umwelt darstellt, in der die Agenten selbstständig über ihr Handeln bestimmen können. Zunächst werden die verwendeten Mechanismen beider Elemente respektiv erklärt. Anschließend wird die Implementierung im Detail besprochen.
 
 \subsection{Agent: Student}\label{agent}
-Ein Student soll sich täglich selbstständig von seiner Wohnung zum Neumarkt bewegen und sich dort für eine Buslinie entscheiden, mit der er zur Universität fährt. Dort angekommen soll er für die Dauer einiger Vorlesungen auf dem Campus bleiben und anschließend von der Bushaltestelle an der Universität zurück zum Neumarkt fahren, wobei er auch in diesem Fall eine Buslinie auswählen muss.
-%Satz hinzugefügt:
-Zur Vereinfachung wurde hier die zwei zuvor angesprochenen Haltestellen der beiden Linien zusammengefasst. 
-Das Ziel des Studenten ist die Auswahl einer Buslinie, mit der er eine möglichst kurze Reisedauer und wenig Wartezeit an den Haltestellen erreicht.
-%hört sich so an wie rationale entscheidung!!!! sozialfaktor/faulheit?
+Ein Student soll sich täglich selbstständig von seiner Wohnung zum Neumarkt bewegen und sich dort für eine Buslinie entscheiden, mit der er zur Universität fährt. Dort angekommen soll er für die Dauer einiger Vorlesungen auf dem Campus bleiben und anschließend von der Bushaltestelle an der Universität zurück zum Neumarkt fahren, wobei er auch in diesem Fall eine Buslinie auswählen muss. Zur Vereinfachung wurde hier die zwei zuvor angesprochenen Haltestellen der beiden Linien zusammengefasst. 
+Das Ziel des Studenten ist die Auswahl einer Buslinie unter Berücksichtigung seiner persönlichen Eigenschaften, mit der er eine möglichst kurze Reisedauer und wenig Wartezeit an den Haltestellen erreicht.
 
 Die Studenten in dem Modell unterscheiden sich hinsichtlich des Zeitpunktes ihres Erscheinens und ihrer Aufenthaltsdauer in der Universität. So kommen einige Studenten besonders früh und hören viele Vorlesungen, während andere Studenten erst spät kommen und nur wenige Vorlesungen hören, bevor sie wieder nach Hause fahren.
 
