@@ -3,9 +3,9 @@ package OScillate;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-import cern.jet.random.Normal;
 import model.Bus;
 import model.Student;
+import cern.jet.random.Normal;
 import enums.Buslinie;
 import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
