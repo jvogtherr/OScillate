@@ -45,7 +45,7 @@ In Abschnitt~\ref{design} werden zunächst grundlegende Designentscheidungen erl
 \section{Design}\label{design}
 Der Modellzweck ist explorativ und lässt sich in folgender Leitfrage zusammenfassen: \glqq Welche Faktoren haben einen Einfluss auf die Wahl der Buslinie?\grqq 
 
-Das Modell ist insgesamt sehr auf die Situation der realen Welt zugeschnitten und lässt sich kaum auf andere Situationen übertragen. Außerdem verwendet das Modell sowohl eine sehr hohe zeitliche, als auch räumliche Auflösung, daher kann der Abstraktionsgrad als realistisch eingestuft werden. Die komplexe Entscheidung der homogenen Agenten, der Studenten, trägt ebenfalls dazu bei und führt zu einer hohen individuellen Komplexität. Funktionale Heterogenität gibt es in direktem Sinne nicht, weil es außer den Studenten keine weiteren Akteure gibt. Die Interaktionen der Studenten untereinander beschränken sich auf simple Beobachtung der Handlungen der anderen Akteure, echte Interaktionen gibt es nicht.
+Das Modell ist insgesamt sehr auf die Situation in der realen Welt zugeschnitten und lässt sich kaum auf andere übertragen. Außerdem verwendet das Modell sowohl eine sehr hohe zeitliche, als auch räumliche Auflösung, daher kann der Abstraktionsgrad als realistisch eingestuft werden. Die komplexe Entscheidung der homogenen Agenten, der Studenten, trägt ebenfalls dazu bei und führt zu einer hohen individuellen Komplexität. Funktionale Heterogenität gibt es in direktem Sinne nicht, weil es außer den Studenten keine weiteren Akteure gibt. Die Interaktionen der Studenten untereinander beschränken sich auf simple Beobachtung der Handlungen der anderen Akteure, echte Interaktionen gibt es nicht.
 
 \section{Implementierung}\label{impl}
 Die zentralen Elemente des Modells sind Studenten als Agenten des Systems und die Busverbindung, die die Umwelt darstellt, in der die Agenten selbstständig über ihr Handeln bestimmen können. Zunächst werden die verwendeten Mechanismen beider Elemente respektiv erklärt. Anschließend wird die Implementierung im Detail besprochen.
@@ -88,5 +88,12 @@ Eine Besonderheit der Modellierung mit Repast Simphony sind die sogenannten \tex
 \section{Auswertung}\label{erg}
 
 \section{Fazit}\label{fazit}
+Das Projekt OScillate befasste sich mit der Entscheidung von Studenten aus Osnabrück, bezüglich der Buslinie, mit der sie zur Uni und wieder zurück fahren. Realisiert wurde dies durch ein agentenbasiertes Modell, welches auf die Plattform Repast Symphony aufbaut und den Tagesablauf eines Studenten realistisch darzustellen versucht. 
 
+Rückblickend ist das Modell nicht wie zunächst geplant explorativ, sondern eher zu einem Verständnismodell geworden. Im Verlaufe der Programmierung sind immer mehr Ideen und Zusatzfunktionen eingeflossen, bis schließlich ein annähernd realistisches Verhalten erreicht wurde und die zeitliche Grenze den Umfang des Projektes festhielt. Mit ein paar echten Daten und Fakten ist es darüberhinaus vermutlich sehr gut als Vorhersagemodell unter einer Fragestellung wie zum Beispiel \glqq Wie viele/große Busse muss ich in welchem Rhythmus einsetzen, ohne dass die Studenten lange warten müssen?\grqq~ geeignet. 
+
+Die eingebaute Lernfähigkeit der Studenten bezüglich ihrer bevorzugten Buslinie ist nicht sehr gut erkennbar. Zum einen liegt dies an der sehr hohen zeitlichen Auflösung, die das Modell nach wenigen Tagen zum erliegen bringt, zum andere könnte es daran liegen, dass Fehler in Code oder schon im Konzept vorliegen, was wegen dem ersten Punkt schwierig zu sagen ist.
+Dies verleitet direkt zur Überlegung von möglichen Erweiterungen und Verbesserungen, die den Umfang dieses Projektes gesprengt hätten. Zum einen könnte man das Modell in einer anderen, leistungsfähigeren Umgebung implementieren, um Entscheidungsdynamiken über längere Zeit zu betrachten.
+
+Eine andere, besser in exakt dieses Modell integrierbare Idee wäre die Anordnung der Studenten in einem Netzwerk, dass Freundschaften darstellt und eine Berücksichtigung von darauf aufbauenden Regeln wie zum Beispiel \glqq Ich fahre lieber mit einem Bus, wenn mindestens ein Freund mitfährt!\grqq~. Weiterhin könnte man sonstige Fahrgäste genauer betrachten und die Funktion für die beiden Linien individuell variieren.
 \end{document}
