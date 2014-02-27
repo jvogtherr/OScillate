@@ -6,4 +6,6 @@
 \contentsline {subsection}{\numberline {3.2}Umwelt: Busverbindung}{4}
 \contentsline {subsection}{\numberline {3.3}Implementierung mithilfe von Repast Symphony}{5}
 \contentsline {section}{\numberline {4}Auswertung}{6}
-\contentsline {section}{\numberline {5}Fazit}{6}
+\contentsline {subsection}{\numberline {4.1}Standardszenario}{7}
+\contentsline {subsection}{\numberline {4.2}Szenario: Zu viele Studenten}{7}
+\contentsline {section}{\numberline {5}Fazit}{9}

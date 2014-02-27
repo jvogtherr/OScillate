@@ -86,6 +86,53 @@ Während \glqq normale\grqq~Studenten dazu in der Lage sind mit einem Bus zu fah
 Eine Besonderheit der Modellierung mit Repast Simphony sind die sogenannten \textit{ScheduledMethods}. Durch eine entsprechende \textit{Annotation} im Java-Code kann man eine Methode zu einem definierten Zeitpunkt im Programmablauf ausführen lassen. Repast Simphony rechnet in \textit{Ticks} als Zeitschritt. Im Modell entspricht ein Tick fünf Minuten. Somit ergeben sich für die Buslinie 11 zum Beispiel eine Fahrtzeit von zwei Ticks, während die Buslinie 21 eine Fahrtzeit von drei Ticks hat, um grobe Anlehnungen an die Realität zu erhalten. Die Busverbindung ist das einzige Objekt in der Simulation, das solche Methoden enthält und fungiert somit als eine Art Managerklasse, die den anderen Objekten zu jedem Zeitpunkt Anordnungen gibt. Das beinhaltet zum Beispiel das Aktualisieren der verbleibenden Aufenthalts- und Fahrtzeiten der Studenten in der Universität und in den Bussen, sowie das Ein- und Aussteigen an den Haltestellen. Außerdem bietet die Busverbindung die nötigen Schnittstellen zur graphischen Auswertung der Simulation, in dem die Klasse verschiedene Methoden für statistische Angaben zum Modell bietet. 
 
 \section{Auswertung}\label{erg}
+Im Folgenden werden einige Ergebnisse und Grafiken des Modells erläutert. Zunächst bietet das Standardszenario einen Einblick in das durch die zuvor erläuterten Regeln bestimmte Modellverhalten. Danach wird beobachtet, was passiert, wenn man sehr viele Studenten bei gleichbleibender Buskapazitäten hat. (Als drittes noch irgendein bevorzugterBusGraph?)
+
+\newpage 
+
+%Anmerkungen:
+%Die Positionierung der Grafiken ist so noch nicht final. Da kümmere ich mich drum, wenn der Text steht ;)
+%Erstie ist immer auf 0
+%Der Rest ist bei s1 bei defaultwerten
+%bei s2 gibt es 10.000 Studenten
+%Die ganze arbeit ist jetzt schon viel zu lang >_>'
+
+\subsection{Standardszenario}\label{s1}
+\begin{figure}
+\includegraphics[scale=0.4]{Standardszenario_Aufenthaltsorte.png}
+\caption{Standardszenario: Aufenthaltsorte der Studenten}
+\label{s1g1}
+\end{figure}
+
+Beschreibung Abbildung \ref{s1g1}
+
+\begin{figure}
+\includegraphics[scale=0.4]{Standardszenario_Busse.png}
+\caption{Standardszenario: Anzahl von Studenten in verschiedenen Bussen}
+\label{s1g2}
+\end{figure}
+
+Beschreibung Abbildung \ref{s1g2}
+
+\subsection{Szenario: Zu viele Studenten}\label{s2}
+
+\begin{figure}
+\includegraphics[scale=0.4]{Viele_Studenten_Aufenthaltsorte.png}
+\caption{Szenario \glqq Zu viele Studenten\grqq : Aufenthaltsorte der Studenten}
+\label{s2g1}
+\end{figure}
+
+Beschreibung Abbildung \ref{s2g1}
+
+\begin{figure}
+\includegraphics[scale=0.4]{Viele_Studenten_Busse.png}
+\caption{Szenario \glqq Zu viele Studenten\grqq : Anzahl von Studenten in verschiedenen Bussen}
+\label{s2g2}
+\end{figure}
+
+Beschreibung Abbildung \ref{s2g2}
+
+\newpage
 
 \section{Fazit}\label{fazit}
 Das Projekt OScillate befasste sich mit der Modellierung der Entscheidung von Studenten aus Osnabrück, mit welcher der beiden Buslinien, die zur Verfügung stehen, sie zur Uni und wieder zurück fahren. Realisiert wurde dies durch ein agentenbasiertes Modell, das mit der Modellierungsumgebung Repast Simphony implementiert wurde und den Tagesablauf eines Studenten realistisch darzustellen versucht. 
