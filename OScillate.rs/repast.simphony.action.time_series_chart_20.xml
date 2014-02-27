@@ -1,9 +1,9 @@
 <repast.simphony.chart2.engine.TimeSeriesChartDescriptor>
-  <name>Studenten Uni Hinweg</name>
-  <dataSet>Studenten Uni Hinweg</dataSet>
+  <name>Studenten (alt)</name>
+  <dataSet>Studenten (alt)</dataSet>
   <xAxisLabel>Tick Count</xAxisLabel>
   <yAxisLabel>Anzahl Studenten</yAxisLabel>
-  <chartTitle>Uni Hinweg</chartTitle>
+  <chartTitle>Studenten (alt)</chartTitle>
   <type>TIME_SERIES</type>
   <background>
     <red>192</red>
@@ -26,16 +26,28 @@
         <label>Uni</label>
         <color>
           <red>0</red>
-          <green>204</green>
-          <blue>51</blue>
+          <green>0</green>
+          <blue>255</blue>
           <alpha>255</alpha>
         </color>
       </SeriesData>
     </entry>
     <entry>
-      <string>Bus N-&gt;U</string>
+      <string>Zuhause</string>
       <SeriesData>
-        <label>Bus N-&gt;U</label>
+        <label>Zuhause</label>
+        <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>255</blue>
+          <alpha>255</alpha>
+        </color>
+      </SeriesData>
+    </entry>
+    <entry>
+      <string>Uni Haltestelle</string>
+      <SeriesData>
+        <label>Uni Haltestelle</label>
         <color>
           <red>255</red>
           <green>0</green>
@@ -50,8 +62,8 @@
         <label>Neumarkt</label>
         <color>
           <red>0</red>
-          <green>0</green>
-          <blue>255</blue>
+          <green>255</green>
+          <blue>0</blue>
           <alpha>255</alpha>
         </color>
       </SeriesData>
