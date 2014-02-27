@@ -51,22 +51,30 @@ Das Modell ist insgesamt sehr auf die Situation in der realen Welt zugeschnitten
 Die zentralen Elemente des Modells sind Studenten als Agenten des Systems und die Busverbindung, die die Umwelt darstellt, in der die Agenten selbstständig über ihr Handeln bestimmen können. Zunächst werden die verwendeten Mechanismen beider Elemente respektiv erklärt. Anschließend wird die Implementierung im Detail besprochen.
 
 \subsection{Agent: Student}\label{agent}
-Ein Student soll sich täglich selbstständig von seiner Wohnung zum Neumarkt bewegen und sich dort für eine Buslinie entscheiden, mit der er zur Universität fährt. Dort angekommen soll er für die Dauer einiger Vorlesungen auf dem Campus bleiben und anschließend von der Bushaltestelle an der Universität zurück zum Neumarkt fahren, wobei er auch in diesem Fall eine Buslinie auswählen muss. Zur Vereinfachung wurde hier die zwei zuvor angesprochenen Haltestellen der beiden Linien zusammengefasst. 
+Ein Student soll sich täglich selbstständig von seiner Wohnung zum Neumarkt bewegen und sich dort für eine Buslinie entscheiden, mit der er zur Universität fährt. Dort angekommen soll er für die Dauer einiger Vorlesungen auf dem Campus bleiben und anschließend von der Bushaltestelle an der Universität zurück zum Neumarkt fahren, wobei er erneut eine Buslinie auswählen muss. Zur Vereinfachung wurde hier die zwei zuvor angesprochenen Haltestellen der beiden Linien zusammengefasst. 
 Das Ziel des Studenten ist die Auswahl einer Buslinie unter Berücksichtigung seiner persönlichen Eigenschaften, mit der er eine möglichst kurze Reisedauer und wenig Wartezeit an den Haltestellen erreicht.
 
-Die Studenten in dem Modell unterscheiden sich hinsichtlich des Zeitpunktes ihres Erscheinens und ihrer Aufenthaltsdauer in der Universität. So kommen einige Studenten besonders früh und hören viele Vorlesungen, während andere Studenten erst spät kommen und nur wenige Vorlesungen hören, bevor sie wieder nach Hause fahren.
+Die Studenten in dem Modell unterscheiden sich im Zeitpunkt ihres Erscheinens und ihrer Aufenthaltsdauer in der Universität. So kommen einige Studenten besonders früh und hören viele Vorlesungen, während andere Studenten erst spät kommen und nur wenige Vorlesungen hören, bevor sie wieder nach Hause fahren.
 
-Jeder Student hat eine bevorzugte Buslinie, die sich über die Zeit ändern kann. Nach jeder Busfahrt evaluiert der Student seine Entscheidung und merkt sich das Ergebnis seiner Überlegungen, sodass er die Zufriedenheit des Vortages bei jeder Entscheidung aufs neue mit einbeziehen kann. Im Modell wird die bevorzugte Buslinie als Parameter des Studenten dargestellt. Zu Beginn sind die bevorzugten Buslinien unter allen Studenten zufällig verteilt - mit Ausnahme der Erstsemesterstudenten, deren bevorzugte Buslinie zu Beginn stets die Linie 21 ist. Die Anzahl der Erstsemesterstudenten kann als Simulationsparameter variiert werden.
+Jeder Student hat eine bevorzugte Buslinie, die sich über die Zeit ändern kann. Nach jeder Busfahrt evaluiert der Student seine Entscheidung und merkt sich das Ergebnis seiner Überlegungen, sodass er die Zufriedenheit des Vortages bei jeder Entscheidung aufs neue mit einbeziehen kann. Im Modell wird die bevorzugte Buslinie als Parameter des Studenten dargestellt. Zu Beginn sind die bevorzugten Buslinien unter allen Studenten zufällig verteilt - mit Ausnahme der Erstsemesterstudenten, deren bevorzugte Buslinie zu Beginn stets die Linie 21 ist. Die Anzahl der \textit{Ersties} kann als Simulationsparameter variiert werden.
 
-Bei der Entscheidungsfindung der Buslinie kommt (bisher nur) ein Parameter zum Tragen, der im Folgenden als der \glqq Sozialfaktor\grqq~bezeichnet wird. Dieser Parameter ist unter den Studenten zufällig verteilt und modelliert die Bereitschaft eines Studenten, in einen bereits sehr vollen Bus einzusteigen. Dies kann verschiedene Situationen der echten Welt darstellen. Beispielsweise könnte ein niedriger Sozialfaktor zeigen, dass der Student in einer größeren Gruppe Studenten unterwegs ist und diese Gruppe nur dann in einen Bus einsteigt, wenn alle Mitglieder der Gruppe einen Sitzplatz bekommen können. Im Gegensatz dazu würde ein hoher Sozialfaktor zum Beispiel einen allein fahrenden Studenten darstellen, der auch bereit ist, in einen stark überfüllten Bus einzusteigen.
+Bei der Entscheidungsfindung der Buslinie kommt ein Parameter zum Tragen, der im Folgenden als der \glqq Sozialfaktor\grqq~bezeichnet wird. Dieser Parameter ist unter den Studenten zufällig verteilt und modelliert die Bereitschaft eines Studenten, in einen bereits sehr vollen Bus einzusteigen. Dies kann verschiedene Situationen der echten Welt darstellen. Beispielsweise könnte ein niedriger Sozialfaktor zeigen, dass der Student in einer größeren Gruppe unterwegs ist und diese Gruppe nur dann in einen Bus einsteigt, wenn alle Mitglieder der Gruppe einen Sitzplatz bekommen können. Im Gegensatz dazu könnte ein hoher Sozialfaktor  einen allein fahrenden Studenten darstellen, der auch bereit ist, in einen überfüllten Bus einzusteigen.
 
 \subsection{Umwelt: Busverbindung}\label{bus}
-Die Busverbindung verwaltet die Haltestellen am Neumarkt und an der Universität, sowie alle Busse, die diese Haltestellen anfahren. Den Studenten wird somit die Möglichkeit gegeben sich an einer Haltestelle anzustellen, auf einen beliebigen Bus zu warten und mit diesem Bus zum Ziel zu fahren. Nach Ablauf der Fahrtzeit muss der Student wieder aus dem Bus aussteigen und von der Haltestelle nach Hause beziehungsweise in die Universität gehen. 
+Die Busverbindung verwaltet die Haltestellen am Neumarkt und der Universität, sowie alle Busse, die diese Haltestellen anfahren. Den Studenten wird somit die Möglichkeit gegeben sich an einer Haltestelle anzustellen, auf einen beliebigen Bus zu warten und mit diesem Bus zum Ziel zu fahren. Nach Ablauf der Fahrtzeit muss der Student wieder aus dem Bus aussteigen und von der Haltestelle nach Hause bzw. in die Universität gehen. 
 
 %hinzugefügt
-Um der Realität etwas näher zu kommen gibt es nicht nur Studenten die Bus fahren, sondern es wird mithilfe einer Polynomfunktion eine \glqq Hintergrundlast\grqq~die andere Fahrgäste darstellen soll. Die verwendete Funktion besitzt ein Maximum morgens zum Schul/Arbeitsbeginn und eines zum Feierabendverkehr.
+Um der Realität etwas näher zu kommen gibt es nicht nur Studenten die Bus fahren, sondern es wird mithilfe einer Polynomfunktion eine \glqq Hintergrundlast\grqq~die andere Fahrgäste darstellen soll. Die verwendete Funktion besitzt ein Maximum morgens und eines zum Feierabendverkehr.
+
+\begin{figure}[ht!]
+\includegraphics[scale=0.4]{Ablaufdiagramm.jpg}
+\caption{Tagesablauf eines Studenten in Projekt OScillate}
+\label{ablauf}
+\end{figure}
+
 
 \subsection{Implementierung mithilfe von Repast Symphony}\label{repast}
+
 Das Modell wird mit dem Modellierungswerkzeug Repast Simphony in Java implementiert und ausgewertet. Zunächst müssen Umwelt und Agenten als Java-Klassen programmiert werden. Jede Simulation muss eine Klasse beinhalten, die das Interface \textit{ContextBuilder} implementiert. In diesem Fall ist dies die Klasse \textit{OScillateBuilder}. Die Methode \textit{build} soll nun die Umwelt initialisieren und die Agenten in der Umwelt ansiedeln, um die Simulation starten zu können. Zunächst werden die Simulationsparameter, die der Nutzer in der graphischen Oberfläche spezifizieren kann, ausgelesen und für die spätere Verwendung vorbereitet. Anschließend werden sowohl eine neue Busverbindung als auch die gewünschte Anzahl an Studenten erzeugt.
 %evtl irgendwo alle möglichen Parameter angeben?
 
@@ -87,8 +95,6 @@ Eine Besonderheit der Modellierung mit Repast Simphony sind die sogenannten \tex
 
 \section{Auswertung}\label{erg}
 Im Folgenden werden einige Ergebnisse und Grafiken des Modells erläutert. Zunächst bietet das Standardszenario einen Einblick in das durch die zuvor erläuterten Regeln bestimmte Modellverhalten. Danach wird beobachtet, was passiert, wenn man sehr viele Studenten bei gleichbleibender Buskapazitäten hat. (Als drittes noch irgendein bevorzugterBusGraph?)
-
-\newpage 
 
 %Anmerkungen:
 %Die Positionierung der Grafiken ist so noch nicht final. Da kümmere ich mich drum, wenn der Text steht ;)

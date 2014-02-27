@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.19)  27 FEB 2014 17:31
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.19)  27 FEB 2014 17:57
 entering extended mode
 **OScillateDoc.tex
 (D:\Projekte\workspace\OScillate\tex\OScillateDoc.tex
@@ -562,57 +562,68 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write3
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 36.
- [2] [3] [4] [5] [6]
-<Standardszenario_Aufenthaltsorte.png, id=28, 1046.40938pt x 640.64343pt>
+ [2] [3]
+<Ablaufdiagramm.jpg, id=18, 1027.84pt x 770.88pt>
+File: Ablaufdiagramm.jpg Graphic file (type jpg)
+ <use Ablaufdiagramm.jpg>
+Package pdftex.def Info: Ablaufdiagramm.jpg used on input line 70.
+(pdftex.def)             Requested size: 411.12872pt x 308.34654pt.
+
+[4] [5 <D:/Projekte/workspace/OScillate/tex/Ablaufdiagramm.jpg>] [6]
+<Standardszenario_Aufenthaltsorte.png, id=29, 1046.40938pt x 640.64343pt>
 File: Standardszenario_Aufenthaltsorte.png Graphic file (type png)
 
 <use Standardszenario_Aufenthaltsorte.png>
 Package pdftex.def Info: Standardszenario_Aufenthaltsorte.png used on input lin
-e 102.
+e 108.
 (pdftex.def)             Requested size: 418.55634pt x 256.25282pt.
 
-<Standardszenario_Busse.png, id=29, 1046.40938pt x 640.64343pt>
+<Standardszenario_Busse.png, id=30, 1046.40938pt x 640.64343pt>
 File: Standardszenario_Busse.png Graphic file (type png)
 
 <use Standardszenario_Busse.png>
-Package pdftex.def Info: Standardszenario_Busse.png used on input line 110.
+Package pdftex.def Info: Standardszenario_Busse.png used on input line 116.
 (pdftex.def)             Requested size: 418.55634pt x 256.25282pt.
 
-<Viele_Studenten_Aufenthaltsorte.png, id=30, 1046.40938pt x 640.64343pt>
+<Viele_Studenten_Aufenthaltsorte.png, id=31, 1046.40938pt x 640.64343pt>
 File: Viele_Studenten_Aufenthaltsorte.png Graphic file (type png)
 
 <use Viele_Studenten_Aufenthaltsorte.png>
 Package pdftex.def Info: Viele_Studenten_Aufenthaltsorte.png used on input line
- 120.
+ 126.
 (pdftex.def)             Requested size: 418.55634pt x 256.25282pt.
 
-<Viele_Studenten_Busse.png, id=31, 1046.40938pt x 640.64343pt>
+<Viele_Studenten_Busse.png, id=32, 1046.40938pt x 640.64343pt>
 File: Viele_Studenten_Busse.png Graphic file (type png)
 
 <use Viele_Studenten_Busse.png>
-Package pdftex.def Info: Viele_Studenten_Busse.png used on input line 128.
+Package pdftex.def Info: Viele_Studenten_Busse.png used on input line 134.
 (pdftex.def)             Requested size: 418.55634pt x 256.25282pt.
  [7 <D:/Projekte/workspace/OScillate/tex/Standardszenario_Aufenthaltsorte.png>]
  [8 <D:/Projekte/workspace/OScillate/tex/Standardszenario_Busse.png> <D:/Projek
 te/workspace/OScillate/tex/Viele_Studenten_Aufenthaltsorte.png>] [9 <D:/Projekt
 e/workspace/OScillate/tex/Viele_Studenten_Busse.png>] [10] (D:\Projekte\workspa
-ce\OScillate\tex\OScillateDoc.aux) ) 
+ce\OScillate\tex\OScillateDoc.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4134 strings out of 493921
- 56282 string characters out of 3150481
- 142044 words of memory out of 3000000
- 7355 multiletter control sequences out of 15000+200000
+ 4141 strings out of 493921
+ 56403 string characters out of 3150481
+ 143054 words of memory out of 3000000
+ 7360 multiletter control sequences out of 15000+200000
  56453 words of font info for 45 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,10n,47p,1173b,263s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Programme/MiKTeX/fonts/enc/dvips/lm/lm-
-ec.enc}<D:/Programme/MiKTeX/fonts/type1/public/lm/lmr12.pfb><D:/Programme/MiKTe
-X/fonts/type1/public/lm/lmr17.pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lm
-ri12.pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmss10.pfb><D:/Programme/Mi
-KTeX/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on OScillateDoc.pdf (10 pages, 575460 bytes).
+ 38i,10n,47p,1173b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Programme/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<D:/Programme/MiKTeX/fonts/
+type1/public/lm/lmr12.pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmr17.pfb>
+<D:/Programme/MiKTeX/fonts/type1/public/lm/lmri12.pfb><D:/Programme/MiKTeX/font
+s/type1/public/lm/lmss10.pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmssbx1
+0.pfb>
+Output written on OScillateDoc.pdf (10 pages, 630616 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 64 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
