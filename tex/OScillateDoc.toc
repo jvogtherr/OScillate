@@ -1,0 +1,12 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Motivation}{3}
+\contentsline {section}{\numberline {2}Design}{3}
+\contentsline {section}{\numberline {3}Implementierung}{3}
+\contentsline {subsection}{\numberline {3.1}Agent: Student}{4}
+\contentsline {subsection}{\numberline {3.2}Umwelt: Busverbindung}{4}
+\contentsline {subsection}{\numberline {3.3}Implementierung mithilfe von Repast Symphony}{5}
+\contentsline {section}{\numberline {4}Auswertung}{7}
+\contentsline {subsection}{\numberline {4.1}Standardszenario}{7}
+\contentsline {subsection}{\numberline {4.2}Szenario: Zu viele Studenten}{9}
+\contentsline {subsection}{\numberline {4.3}kurze Zusammenfassung}{11}
+\contentsline {section}{\numberline {5}Fazit}{12}

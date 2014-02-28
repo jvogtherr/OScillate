@@ -1,34 +1,40 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.28)  28 FEB 2014 18:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.19)  28 FEB 2014 19:14
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
 **OScillateDoc.tex
-(./OScillateDoc.tex
+(D:\Projekte\workspace\OScillate\tex\OScillateDoc.tex
 LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 78 languages loaded.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/koma-script/scrartcl.cls
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(D:\Programme\MiKTeX\tex\latex\koma-script\scrartcl.cls
 Document Class: scrartcl 2012/07/29 v3.11b KOMA-Script document class (article)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/koma-script/scrkbase.sty
+(D:\Programme\MiKTeX\tex\latex\koma-script\scrkbase.sty
 Package: scrkbase 2012/07/29 v3.11b KOMA-Script package (KOMA-Script-dependent 
 basics and keyval usage)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/koma-script/scrbase.sty
+(D:\Programme\MiKTeX\tex\latex\koma-script\scrbase.sty
 Package: scrbase 2012/07/29 v3.11b KOMA-Script package (KOMA-Script-independent
  basics and keyval usage)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+(D:\Programme\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(D:\Programme\MiKTeX\tex\latex\koma-script\scrlfile.sty
 Package: scrlfile 2012/06/15 v3.12 KOMA-Script package (loading files)
 
 Package scrlfile, 2012/06/15 v3.12 KOMA-Script package (loading files)
                   Copyright (C) Markus Kohm
 
-))) (/usr/local/texlive/2013/texmf-dist/tex/latex/koma-script/tocbasic.sty
+))) (D:\Programme\MiKTeX\tex\latex\koma-script\tocbasic.sty
 Package: tocbasic 2012/04/04 v3.10b KOMA-Script package (handling toc-files)
 )
 Package tocbasic Info: omitting babel extension for `toc'
@@ -48,11 +54,11 @@ Package scrartcl Info: You've used obsolete option `12pt'.
 Class scrartcl Info: File `scrsize12pt.clo' used to setup font sizes on input l
 ine 1267.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+(D:\Programme\MiKTeX\tex\latex\koma-script\scrsize12pt.clo
 File: scrsize12pt.clo 2012/07/29 v3.11b KOMA-Script font size class option (12p
 t)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/koma-script/typearea.sty
+(D:\Programme\MiKTeX\tex\latex\koma-script\typearea.sty
 Package: typearea 2012/07/29 v3.11b KOMA-Script package (type area)
 
 Package typearea, 2012/07/29 v3.11b KOMA-Script package (type area)
@@ -100,19 +106,19 @@ Package typearea Info: These are the values describing the layout:
 \c@figure=\count86
 \c@table=\count87
 \bibindent=\dimen102
-) (/usr/local/texlive/2013/texmf-dist/tex/latex/base/inputenc.sty
+) (D:\Programme\MiKTeX\tex\latex\base\inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
+(D:\Programme\MiKTeX\tex\latex\base\utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.dfu
+(D:\Programme\MiKTeX\tex\latex\base\t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -262,7 +268,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ot1enc.dfu
+(D:\Programme\MiKTeX\tex\latex\base\ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -293,7 +299,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omsenc.dfu
+(D:\Programme\MiKTeX\tex\latex\base\omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -317,14 +323,14 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
+(D:\Programme\MiKTeX\tex\latex\base\fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
+(D:\Programme\MiKTeX\tex\latex\base\t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/lmodern.sty
+(D:\Programme\MiKTeX\tex\latex\lm\lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -359,38 +365,44 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/05/16 v3.9f The Babel package
+(D:\Programme\MiKTeX\tex\generic\babel\babel.sty
+Package: babel 2008/07/08 v3.8m The Babel package
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+*************************************
+* Local config file bblopts.cfg used
+*
+(D:\Programme\MiKTeX\tex\latex\00miktex\bblopts.cfg
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+(D:\Programme\MiKTeX\tex\generic\babel\ngermanb.ldf
 Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2013/05/16 v3.9f Babel common definitions
+(D:\Programme\MiKTeX\tex\generic\babel\babel.def
+File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 )
 \l@naustrian = a dialect from \language\l@ngerman 
 Package babel Info: Making " an active character on input line 92.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
+(D:\Programme\MiKTeX\tex\latex\amsmath\amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip47
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amstext.sty
+(D:\Programme\MiKTeX\tex\latex\amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsgen.sty
+(D:\Programme\MiKTeX\tex\latex\amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen104
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(D:\Programme\MiKTeX\tex\latex\amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen105
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
+(D:\Programme\MiKTeX\tex\latex\amsmath\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count89
@@ -431,31 +443,31 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/koma-script/scrpage2.sty
+(D:\Programme\MiKTeX\tex\latex\koma-script\scrpage2.sty
 Package: scrpage2 2010/04/22 v2.5 LaTeX2e KOMA-Script package
 LaTeX Info: Redefining \pagemark on input line 176.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+(D:\Programme\MiKTeX\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+(D:\Programme\MiKTeX\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+(D:\Programme\MiKTeX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(D:\Programme\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(D:\Programme\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(D:\Programme\MiKTeX\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(D:\Programme\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count101
@@ -463,12 +475,11 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+(D:\Programme\MiKTeX\tex\latex\ltxmisc\url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-) (./OScillateDoc.aux)
-\openout1 = `OScillateDoc.aux'.
-
+)
+(D:\Projekte\workspace\OScillate\tex\OScillateDoc.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
@@ -482,10 +493,11 @@ LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 30.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmr.fd
+
+(D:\Programme\MiKTeX\tex\latex\lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+(D:\Programme\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count102
 \scratchdimen=\dimen115
@@ -498,57 +510,9 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \MPnumerator=\count106
 \makeMPintoPDFobject=\count107
 \everyMPtoPDFconversion=\toks23
-) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 33.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmss.fd
+ (D:\Programme\MiKTeX\tex\latex\lm\t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 <unilogo.pdf, id=1, 392.46625pt x 102.3825pt>
@@ -558,24 +522,24 @@ Package pdftex.def Info: unilogo.pdf used on input line 33.
 (pdftex.def)             Requested size: 313.9734pt x 81.9061pt.
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 33.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ot1lmr.fd
+(D:\Programme\MiKTeX\tex\latex\lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 33.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omllmm.fd
+(D:\Programme\MiKTeX\tex\latex\lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 33.
 
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omslmsy.fd
+(D:\Programme\MiKTeX\tex\latex\lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 33.
 
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omxlmex.fd
+(D:\Programme\MiKTeX\tex\latex\lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -587,56 +551,74 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./unilo
-go.pdf>]
-(./OScillateDoc.toc)
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Projekte/workspace/OSc
+illate/tex/unilogo.pdf>]
+(D:\Projekte\workspace\OScillate\tex\OScillateDoc.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 5.
+)
 \tf@toc=\write3
-\openout3 = `OScillateDoc.toc'.
-
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 36.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 36.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 36.
- [2]
+ [2] [3]
+<Ablaufdiagramm.jpg, id=18, 1027.84pt x 770.88pt>
+File: Ablaufdiagramm.jpg Graphic file (type jpg)
+ <use Ablaufdiagramm.jpg>
+Package pdftex.def Info: Ablaufdiagramm.jpg used on input line 69.
+(pdftex.def)             Requested size: 411.12872pt x 308.34654pt.
 
-LaTeX Warning: Reference `erg' on page 3 undefined on input line 43.
+[4] [5 <D:/Projekte/workspace/OScillate/tex/Ablaufdiagramm.jpg>] [6]
+<Standardszenario_Aufenthaltsorte.png, id=29, 1046.40938pt x 640.64343pt>
+File: Standardszenario_Aufenthaltsorte.png Graphic file (type png)
 
+<use Standardszenario_Aufenthaltsorte.png>
+Package pdftex.def Info: Standardszenario_Aufenthaltsorte.png used on input lin
+e 105.
+(pdftex.def)             Requested size: 418.55634pt x 256.25282pt.
+ [7 <D:/Projekte/workspace/OScillate/tex/Standardszenario_Aufenthaltsorte.png>]
 
-LaTeX Warning: Reference `fazit' on page 3 undefined on input line 43.
+<Standardszenario_Busse.png, id=34, 1046.40938pt x 640.64343pt>
+File: Standardszenario_Busse.png Graphic file (type png)
 
-[3]
+<use Standardszenario_Busse.png>
+Package pdftex.def Info: Standardszenario_Busse.png used on input line 119.
+(pdftex.def)             Requested size: 418.55634pt x 256.25282pt.
+ [8 <D:/Projekte/workspace/OScillate/tex/Standardszenario_Busse.png>]
+<Viele_Studenten_Aufenthaltsorte.png, id=38, 1046.40938pt x 640.64343pt>
+File: Viele_Studenten_Aufenthaltsorte.png Graphic file (type png)
 
-LaTeX Warning: File `Ablaufdiagramm.jpg' not found on input line 69.
+<use Viele_Studenten_Aufenthaltsorte.png>
+Package pdftex.def Info: Viele_Studenten_Aufenthaltsorte.png used on input line
+ 133.
+(pdftex.def)             Requested size: 418.55634pt x 256.25282pt.
+ [9 <D:/Projekte/workspace/OScillate/tex/Viele_Studenten_Aufenthaltsorte.png>]
+<Viele_Studenten_Busse.png, id=42, 1046.40938pt x 640.64343pt>
+File: Viele_Studenten_Busse.png Graphic file (type png)
 
+<use Viele_Studenten_Busse.png>
+Package pdftex.def Info: Viele_Studenten_Busse.png used on input line 144.
+(pdftex.def)             Requested size: 418.55634pt x 256.25282pt.
+ [10 <D:/Projekte/workspace/OScillate/tex/Viele_Studenten_Busse.png>] [11] [12]
 
-./OScillateDoc.tex:69: Package pdftex.def Error: File `Ablaufdiagramm.jpg' not 
-found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.69 ...udegraphics[scale=0.4]{Ablaufdiagramm.jpg}
-                                                  
-? 
-./OScillateDoc.tex:69: Emergency stop.
- ...                                              
-                                                  
-l.69 ...udegraphics[scale=0.4]{Ablaufdiagramm.jpg}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
- 
+(D:\Projekte\workspace\OScillate\tex\OScillateDoc.aux) ) 
 Here is how much of TeX's memory you used:
- 4575 strings out of 493315
- 65306 string characters out of 6137904
- 157011 words of memory out of 5000000
- 7925 multiletter control sequences out of 15000+600000
- 59451 words of font info for 46 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 46i,10n,47p,981b,271s stack positions out of 5000i,500n,10000p,200000b,80000s
-./OScillateDoc.tex:69:  ==> Fatal error occurred, no output PDF file produced!
+ 4142 strings out of 493921
+ 56415 string characters out of 3150481
+ 142065 words of memory out of 3000000
+ 7361 multiletter control sequences out of 15000+200000
+ 56453 words of font info for 45 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 38i,10n,47p,1173b,263s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Programme/MiKTeX/fo
+nts/enc/dvips/lm/lm-ec.enc}<D:/Programme/MiKTeX/fonts/type1/public/lm/lmr12.pfb
+><D:/Programme/MiKTeX/fonts/type1/public/lm/lmr17.pfb><D:/Programme/MiKTeX/font
+s/type1/public/lm/lmri12.pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmss10.
+pfb><D:/Programme/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
+Output written on OScillateDoc.pdf (12 pages, 638977 bytes).
+PDF statistics:
+ 70 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+
