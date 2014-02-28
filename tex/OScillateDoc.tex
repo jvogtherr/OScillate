@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
+\usepackage{caption}
 
 \widowpenalty10000
 \ihead[]{}
@@ -41,7 +42,7 @@ Als Student der Universität oder Hochschule in Osnabrück steht man täglich vo
 
 Das im folgende vorgestellte Projekt OScillate beschäftigt sich mit ebendieser Problematik. Im Rahmen der Veranstaltung \glqq Regelbasierte Modellierung\grqq wurde ein agentenbasiertes Modell erstellt, das die Entscheidungsdynamik dieser Fragestellung nachstellen soll. Zu finden ist das Projekt unter \url{https://github.com/jvogtherr/OScillate}.
 
-In Abschnitt~\ref{design} werden zunächst grundlegende Designentscheidungen erläutert. Darauf basierend geht es in Abschnitt~\ref{impl} um die Umsetzung der Ideen, direkt gefolgt von einer Auswertung der daraus resultierenden Ergebnisse in Abschnitt~\ref{erg}. Abschließend diskutiert Abschnitt~\ref{fazit} den Verlauf des Projektes, sowie die erhaltenen Ergebnisse.
+In \autoref{design} werden zunächst grundlegende Designentscheidungen erläutert. Darauf basierend geht es in \autoref{impl} um die Umsetzung der Ideen, direkt gefolgt von einer Auswertung der daraus resultierenden Ergebnisse in \autoref{erg}. Abschließend diskutiert \autoref{fazit} den Verlauf des Projektes, sowie die erhaltenen Ergebnisse.
 
 \section{Design}\label{design}
 Der Modellzweck ist explorativ und lässt sich in folgender Leitfrage zusammenfassen: \glqq Welche Faktoren haben einen Einfluss auf die Wahl der Buslinie?\grqq 
@@ -94,13 +95,6 @@ Eine Besonderheit der Modellierung mit Repast Simphony sind die sogenannten \tex
 \section{Auswertung}\label{erg}
 Im Folgenden werden einige Ergebnisse der Modellierung anhand von Grafiken erläutert. Mithilfe der Parameterkonfiguration lassen sich verschiedene Szenarien konstruieren, um das Modell auszuwerten. In diesem Kapitel wird zuerst das realitätsnahe Standardszenario vorgestellt, das einen Einblick in das Modellverhalten bietet. Anschließend wird in einem extremen Szenario gezeigt, welches Verhalten bei gleichbleibender Buskapazität aber deutlich erhöhter Studentenzahl eintritt.
 
-%Anmerkungen:
-%Die Positionierung der Grafiken ist so noch nicht final. Da kümmere ich mich drum, wenn der Text steht ;)
-%Erstie ist immer auf 0
-%Der Rest ist bei s1 bei defaultwerten
-%bei s2 gibt es 10.000 Studenten
-%Die ganze arbeit ist jetzt schon viel zu lang >_>'
-
 \subsection{Standardszenario}\label{s1}
 \begin{figure}
 \includegraphics[scale=0.4]{Standardszenario_Aufenthaltsorte.png}
@@ -108,8 +102,7 @@ Im Folgenden werden einige Ergebnisse der Modellierung anhand von Grafiken erlä
 \label{s1g1}
 \end{figure}
 
-%Beschreibung Abbildung \ref{s1g1}
-In Abbildung \ref{s1g1} kann man einen Tagesdurchlauf der Simulation erkennen. Dabei stellt jeder Graph die Anzahl der Studenten an einem bestimmten Aufenthaltsort im System dar. Betrachtet man den pinken Graphen, so kann man erkennen, zu welchen Uhrzeiten die Studenten typischerweise den Weg zur Universität beginnen. In drei Stoßzeiten laufen die Studenten zum Neumarkt, jeweils um acht Uhr, um zehn Uhr und um zwölf Uhr. Die Startzeit eines Studenten ist um eine der drei Stoßzeiten normalverteilt, sodass einige also bereits früher als acht Uhr das Haus verlassen, während einige auch erst deutlich nach zwölf Uhr losgehen. 
+In \autoref{s1g1} kann man einen Tagesdurchlauf der Simulation erkennen. Dabei stellt jeder Graph die Anzahl der Studenten an einem bestimmten Aufenthaltsort im System dar. Betrachtet man den pinken Graphen, so kann man erkennen, zu welchen Uhrzeiten die Studenten typischerweise den Weg zur Universität beginnen. In drei Stoßzeiten laufen die Studenten zum Neumarkt, jeweils um acht Uhr, um zehn Uhr und um zwölf Uhr. Die Startzeit eines Studenten ist um eine der drei Stoßzeiten normalverteilt, sodass einige also bereits früher als acht Uhr das Haus verlassen, während einige auch erst deutlich nach zwölf Uhr losgehen. 
 
 Analog dazu kann man erkennen, dass die Studentenwellen, die zu den drei Stoßzeiten losfahren, ebenfalls um kurze Zeit später in solchen Wellen an der Universität ankommen (blauer Graph). Das bedeutet, dass es zu keinen unerwarteten Verzögerungen im Busverkehr gekommen ist. Ähnlich wie beim Hinweg reisen die Studenten nach einem ähnlichen Muster von der Universität nach Hause, nämlich nach Ende von vordefinierten Vorlesungsblocks. So hören einige Studenten nur wenige Vorlesungen und fahren früh, während andere lange bleiben und erst am Ende des Tages nach Hause fahren. 
 
@@ -122,8 +115,7 @@ Insgesamt kann man im Standardszenario also das Prinzip der Simulation gut erken
 \label{s1g2}
 \end{figure}
 
-%Beschreibung Abbildung \ref{s1g2}
-Abbildung \ref{s1g2} ist ebenfalls ein Diagramm, das das Standardszenario darstellt. Der blaue und grüne Graph zeigen die Anzahl der Studenten im Bus 11 und im Bus 21 auf dem Weg zur Universität. Der rote und der pinke Graph zeigen die Anzahl der Studenten im Bus 11 und im Bus 21 auf dem Weg von der Universität zurück zum Neumarkt. Zu den bereits genannten Stoßzeiten zu Beginn des Tages um acht, zehn und zwölf Uhr kann man die Graphen für die Busfülle der Linien in Richtung Universität sehen. Dies sind die Studenten, die morgens zur Uni fahren. Man kann erkennen, dass beide Buslinien ähnlich genutzt werden, wobei man dennoch sagen kann, dass die Linie 11 stärker genutzt wird. 
+\autoref{s1g2} ist ebenfalls ein Diagramm, das das Standardszenario darstellt. Der blaue und grüne Graph zeigen die Anzahl der Studenten im Bus 11 und im Bus 21 auf dem Weg zur Universität. Der rote und der pinke Graph zeigen die Anzahl der Studenten im Bus 11 und im Bus 21 auf dem Weg von der Universität zurück zum Neumarkt. Zu den bereits genannten Stoßzeiten zu Beginn des Tages um acht, zehn und zwölf Uhr kann man die Graphen für die Busfülle der Linien in Richtung Universität sehen. Dies sind die Studenten, die morgens zur Uni fahren. Man kann erkennen, dass beide Buslinien ähnlich genutzt werden, wobei man dennoch sagen kann, dass die Linie 11 stärker genutzt wird. 
 
 Auf dem Rückweg von der Universität ist die Situation ähnlich, mit dem Unterschied, dass es nicht drei, sondern vier Stoßzeiten gibt, von denen die erste die mit Abstand kleinste ist. Auch hier ist das Fahrverhalten der Studenten ähnlich, wobei die Buslinie 11 tendenziell mehr genutzt wird. 
 Zu erklären ist das in diesem Szenario durch die kürzere Fahrtzeit der 11. Da der Bus öfter kommt und insgesamt kürzer fährt, ist er in der Lage, mehr Studenten aufzunehmen als die Buslinie 21. Da zu Beginn der \textit{bevorzugter Bus} Parameter zufällig verteilt ist, fahren zu Beginn auch sehr viele Studenten mit der 21. Über längere Zeit wechseln einige Studenten von der Buslinie 11 zur 21, da die 11 zu oft zu voll wird, was in diesem Diagramm nicht mehr zu erkennen ist. Über die Zeit kann sich ein Gleichgewicht einstellen.
@@ -136,8 +128,7 @@ Zu erklären ist das in diesem Szenario durch die kürzere Fahrtzeit der 11. Da 
 \label{s2g1}
 \end{figure}
 
-%Beschreibung Abbildung \ref{s2g1}
-In Abbildung \ref{s2g1} kann man, ähnlich wie in Abbildung \ref{s1g1}, erkennen, wie viele Studenten zu welchem Zeitpunkt an welchem Ort sind. Besonders ist hierbei, dass die Anzahl der Studenten zehn mal so hoch gewählt ist, wie im Standardszenario, während die Buskapazitäten gleich geblieben sind. Insgesamt gibt es nun also deutlich zu viele Studenten für die Busverbindung. Dies äußert sich an den Wartezeiten am Neumarkt und an der Bushaltestelle an der Universität.
+In \autoref{s2g1} kann man, ähnlich wie in \autoref{s1g1}, erkennen, wie viele Studenten zu welchem Zeitpunkt an welchem Ort sind. Besonders ist hierbei, dass die Anzahl der Studenten zehn mal so hoch gewählt ist, wie im Standardszenario, während die Buskapazitäten gleich geblieben sind. Insgesamt gibt es nun also deutlich zu viele Studenten für die Busverbindung. Dies äußert sich an den Wartezeiten am Neumarkt und an der Bushaltestelle an der Universität.
 Der grüne Graph zeit die Anzahl der Studenten am Neumarkt. Wie man sehen kann, sinkt der Graph  nach dem ersten Hochpunkt langsam. Dies bedeutet, dass zu Beginn sehr viele Studenten an den Neumarkt kommen, dort auf einen Bus warten und schließlich losfahren. Bis der Anstieg zum zweiten Hochpunkt losgeht, sind aber noch nicht, wie im Standardszenario, alle Studenten vom Neumarkt aufgebrochen, bevor die zweite Stoßzeit beginnt, sodass sich in diesem Fall zwei Stoßzeiten überlagern. Das hat zur Folge, dass jeder Bus, egal ob 11 oder 21, der am Neumarkt ankommt, so viele Studenten mitnimmt, wie er kann. Zu beobachten ist dies bei dem blauen Graphen, der zeigt, wie viele Studenten an der Universität angekommen sind. Der Bus steigt linear, was die Erklärung für das Verhalten am Neumarkt bestätigt. Jeder Bus der an der Uni ankommt ist maximal besetzt und es dauert eine gewisse Zeit, bis alle Studenten vom Neumarkt zur Universität gelangt sind. Gegen Ende sind die Busse dann auch nicht mehr maximal besetzt und es stellt sich wieder ein annähernd normales Verhalten ein. 
 Die Dynamik der Rückfahrt ist in diesem Fall analog. Die Bushaltestelle an der Universität wird nach den Vorlesungsendzeiten stark überfüllt, sodass selbst spät abends noch Studenten an der Haltestelle stehen und auf einen Bus warten müssen. 
 
@@ -147,8 +138,7 @@ Die Dynamik der Rückfahrt ist in diesem Fall analog. Die Bushaltestelle an der 
 \label{s2g2}
 \end{figure}
 
-%Beschreibung Abbildung \ref{s2g2}
-Abbildung \ref{s2g2} zeigt den Tagesablauf aus Abbildung \ref{s2g1} wieder aus der Perspektive der einzelnen Buslinien. In diesem Fall sind die Buslinien 11 und 21 ähnlich voll besetzt, was sich auch über mehrere Simulationen nicht ändert. Wie in Abbildung \ref{s1g1} gehören hier wieder jeweils der blaue und der grüne Graph zusammen und zeigen den Hinweg zur Universität, während der pinke und der rote Graph den Rückweg zeigen. Vergleicht man Abbildung \ref{s2g1} und Abbildung \ref{s2g2}, so kann man sehen, dass in diesem Fall die Buslinien während der Hin- bzw. Rückfahrtzeiten stets besetzt sind und keine Linie zu einem Zeitpunkt keine Fahrgäste hat. Besonders stark ist der Unterschied bei der zweiten und dritten Stoßzeit während der Hinfahrt und bei den beiden letzten Stoßzeiten der Rückfahrt. Hier ist für eine gewisse Zeit die Buskapazität dauerhaft erreicht und die Busse sind vollständig besetzt. Darüberhinaus kann man hier die Funktion der sonstigen Fahrgäste in invertierter Form erkennen, da die Busse immer möglichst voll besetzt werden und sie die Buskapazität in Abhängigkeit von der Zeit verringert.
+\autoref{s2g2} zeigt den Tagesablauf aus \autoref{s2g1} wieder aus der Perspektive der einzelnen Buslinien. In diesem Fall sind die Buslinien 11 und 21 ähnlich voll besetzt, was sich auch über mehrere Simulationen nicht ändert. Wie in \autoref{s1g1} gehören hier wieder jeweils der blaue und der grüne Graph zusammen und zeigen den Hinweg zur Universität, während der pinke und der rote Graph den Rückweg zeigen. Vergleicht man \autoref{s2g1} und \autoref{s2g2}, so kann man sehen, dass in diesem Fall die Buslinien während der Hin- bzw. Rückfahrtzeiten stets besetzt sind und keine Linie zu einem Zeitpunkt keine Fahrgäste hat. Besonders stark ist der Unterschied bei der zweiten und dritten Stoßzeit während der Hinfahrt und bei den beiden letzten Stoßzeiten der Rückfahrt. Hier ist für eine gewisse Zeit die Buskapazität dauerhaft erreicht und die Busse sind vollständig besetzt. Darüberhinaus kann man hier die Funktion der sonstigen Fahrgäste in invertierter Form erkennen, da die Busse immer möglichst voll besetzt werden und sie die Buskapazität in Abhängigkeit von der Zeit verringert.
 
 
 \subsection{kurze Zusammenfassung}\label{graphenzsm}
